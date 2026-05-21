@@ -1,0 +1,6 @@
+# requirements.txt for Sunpost backend
+fastapi
+uvicorn
+python-multipart
+firebase-admin
+python-dotenv

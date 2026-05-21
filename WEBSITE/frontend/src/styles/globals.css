@@ -1,0 +1,50 @@
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1 'calt' 1;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .shadow-sm {
+    @apply shadow-[0_1px_2px_0_rgb(0_0_0_0.05)];
+  }
+
+  .shadow-md {
+    @apply shadow-[0_4px_6px_-1px_rgb(0_0_0_0.1)];
+  }
+
+  .shadow-lg {
+    @apply shadow-[0_10px_15px_-3px_rgb(0_0_0_0.1)];
+  }
+
+  .shadow-xl {
+    @apply shadow-[0_20px_25px_-5px_rgb(0_0_0_0.1)];
+  }
+}
+
+/* Smooth transitions for theme changes */
+* {
+  @apply transition-colors duration-300;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded hover:bg-muted;
+}
