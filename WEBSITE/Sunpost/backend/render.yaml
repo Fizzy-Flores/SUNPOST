@@ -2,6 +2,7 @@ services:
   - type: web
     name: sunpost-backend
     env: python
+    pythonVersion: 3.12.0
     root: WEBSITE/Sunpost/backend
     plan: free
     buildCommand: python -m pip install --upgrade pip && python -m pip install -r requirements.txt

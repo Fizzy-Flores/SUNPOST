@@ -10,3 +10,6 @@ google-auth-httplib2==0.2.0
 google-cloud-firestore==2.15.0
 setuptools==82.0.1
 a2wsgi==1.10.10
+# Pin protobuf to a modern, Python-3.12+ compatible release to avoid
+# "Metaclasses with custom tp_new are not supported" import errors
+protobuf==4.25.9
