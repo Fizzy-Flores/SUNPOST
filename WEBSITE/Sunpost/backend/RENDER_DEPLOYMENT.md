@@ -33,7 +33,7 @@ WEBSITE/Sunpost/backend/
    - **Build Command**: `cd WEBSITE/Sunpost/backend && python -m pip install --upgrade pip && python -m pip install -r requirements.txt`
    - **Start Command**: `cd WEBSITE/Sunpost/backend && python -m uvicorn main:app --host 0.0.0.0 --port $PORT`
 
-   This repository now includes a root-level `render.yaml` and a root-level `requirements.txt` that redirects to `WEBSITE/Sunpost/backend/requirements.txt`.
+   This repository now includes a root-level `render.yaml`, a root-level `requirements.txt` that redirects to `WEBSITE/Sunpost/backend/requirements.txt`, and a root-level `Procfile` that starts the backend from the correct subfolder.
 
    If your service is configured manually in the dashboard instead of using `render.yaml`, set the service root to `WEBSITE/Sunpost/backend` and use the same build/start commands.
 
