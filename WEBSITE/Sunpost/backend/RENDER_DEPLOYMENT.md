@@ -29,15 +29,13 @@ WEBSITE/Sunpost/backend/
 4. Configure the service:
    - **Name**: `sunpost-backend`
    - **Environment**: `Python 3`
-   - **Root Directory**: `WEBSITE/Sunpost/backend`
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
    - **Plan**: Free or Paid (Free tier has 15-min auto-sleep)
+   - **Build Command**: `cd WEBSITE/Sunpost/backend && pip install -r requirements.txt`
+   - **Start Command**: `cd WEBSITE/Sunpost/backend && uvicorn main:app --host 0.0.0.0 --port $PORT`
 
-   If you cannot set the root directory in the dashboard, change the build command to:
-   ```bash
-   cd WEBSITE/Sunpost/backend && pip install -r requirements.txt
-   ```
+   This repository now includes a root-level `render.yaml` at the repository root, so Render can use the correct backend subfolder automatically when it deploys from the GitHub repo root.
+
+   If your service is configured manually in the dashboard instead of using `render.yaml`, set the service root to `WEBSITE/Sunpost/backend` and use the same build/start commands.
 
 ## Step 3: Set Environment Variables
 
