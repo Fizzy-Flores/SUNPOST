@@ -14,9 +14,12 @@
       .card{width:min(560px,100%);background:rgba(27,12,8,0.96);border:1px solid rgba(255,255,255,0.1);border-radius:24px;box-shadow:0 28px 70px rgba(0,0,0,0.18);padding:2rem;}
       h1{font-size:1.6rem;margin-bottom:0.75rem;}
       p{color:rgba(248,228,193,0.9);line-height:1.7;margin-bottom:1.25rem;}
-      .input-group{display:grid;gap:0.5rem;margin-bottom:1rem;}
+      .otp-area{display:grid;gap:1rem;padding:1.5rem;border-radius:20px;background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.14);margin-bottom:1.25rem;}
+      .otp-area strong{display:block;color:#fff;font-size:0.95rem;letter-spacing:0.02em;}
+      .input-group{display:grid;gap:0.5rem;}
       label{color:rgba(242,217,177,0.95);}
-      input{padding:0.9rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.06);color:#fff;outline:none;}
+      input{padding:1.05rem 1.1rem;border-radius:18px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.06);color:#fff;outline:none;font-size:1rem;letter-spacing:0.16em;}
+      input:focus{border-color:rgba(247,197,138,0.95);box-shadow:0 0 0 4px rgba(247,197,138,0.1);}
       .submit-btn{display:inline-flex;align-items:center;justify-content:center;padding:0.95rem 1.35rem;border-radius:999px;border:none;cursor:pointer;font-weight:800;background:linear-gradient(135deg,#f7c58a,#d9773f);color:#1f0c04;}
       .form-message{min-height:1.2rem;margin-top:0.8rem;}
       .error{color:#ffb3b3;}
@@ -32,10 +35,17 @@
         <p>We sent a verification code to your Gmail. Enter it below to continue.</p>
 
         <form id="otp-form" onsubmit="return false;">
-          <div class="input-group">
-            <label for="otp">Verification code</label>
-            <input id="otp" name="otp" inputmode="numeric" autocomplete="one-time-code" placeholder="123456" required />
-            <div class="helper">Codes expire in a few minutes.</div>
+          <div class="otp-area">
+            <strong>Enter the code sent to your email</strong>
+            <div class="input-group">
+              <label for="otp">Verification code</label>
+              <input id="otp" name="otp" inputmode="numeric" autocomplete="one-time-code" placeholder="123456" required />
+              <div class="helper">Codes expire in a few minutes.</div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;">
+              <div id="otp-timer" class="helper" style="font-weight:700;color:var(--text, #fff);">Preparing…</div>
+              <button type="button" id="resend-otp-button" class="submit-btn" style="padding:0.5rem 0.9rem;border-radius:12px;font-weight:700;background:rgba(255,255,255,0.06);color:#fff;">Resend</button>
+            </div>
           </div>
 
           <button type="button" id="verify-otp-button" class="submit-btn">Verify & Continue</button>
@@ -52,6 +62,89 @@
     <script>
       // auth.js attaches handlers; we only provide a small bootstrap for OTP page.
       window.__SUNPOST_OTP_PAGE__ = true;
+    </script>
+    <script>
+      // Inline UI wiring: autofocus, auto-submit on 6 digits, resend, and countdown
+      (function () {
+        function el(id) { return document.getElementById(id); }
+        const otpInput = el('otp');
+        const resendBtn = el('resend-otp-button');
+        const timerEl = el('otp-timer');
+        const messageEl = el('otp-message');
+        const verifyBtn = el('verify-otp-button');
+
+        function show(msg, isError) {
+          if (!messageEl) return;
+          messageEl.textContent = msg;
+          messageEl.classList.toggle('error', !!isError);
+          messageEl.classList.toggle('success', !isError);
+        }
+
+        // Focus input when available
+        setTimeout(() => { try { otpInput && otpInput.focus(); } catch (e) {} }, 300);
+
+        // Auto-submit when user types 6 digits
+        otpInput && otpInput.addEventListener('input', (e) => {
+          const v = (e.target.value || '').replace(/\D/g, '');
+          e.target.value = v;
+          if (v.length >= 6) {
+            verifyBtn && verifyBtn.click();
+          }
+        });
+
+        async function updateTimer() {
+          try {
+            const currentUser = (typeof getCurrentUser === 'function') ? getCurrentUser() : null;
+            if (!currentUser || !currentUser.uid) {
+              timerEl && (timerEl.textContent = 'Session required');
+              resendBtn && (resendBtn.disabled = true);
+              return;
+            }
+            const key = getOtpPendingKey(currentUser.uid);
+            const expires = Number(sessionStorage.getItem(key) || 0);
+            const now = Math.floor(Date.now() / 1000);
+            const rem = expires - now;
+            if (rem > 0) {
+              const mm = Math.floor(rem / 60);
+              const ss = rem % 60;
+              timerEl && (timerEl.textContent = `Code expires in ${mm}:${String(ss).padStart(2,'0')}`);
+              resendBtn && (resendBtn.disabled = true);
+            } else {
+              timerEl && (timerEl.textContent = 'Code expired');
+              resendBtn && (resendBtn.disabled = false);
+            }
+          } catch (e) {
+            console.warn('Timer update failed', e);
+          }
+        }
+
+        // Resend handler uses existing postAuth endpoint
+        resendBtn && resendBtn.addEventListener('click', async () => {
+          try {
+            show('Requesting new code...', false);
+            if (!hasFirebaseAuth() || !firebase.auth().currentUser) {
+              show('Session not available. Please sign in again.', true);
+              setTimeout(() => window.location.href = 'login.html', 900);
+              return;
+            }
+            resendBtn.disabled = true;
+            const idToken = await firebase.auth().currentUser.getIdToken();
+            await postAuth('/public/request-otp', { idToken });
+            // set pending locally
+            try { setOtpPending(Math.floor(Date.now() / 1000) + 300); } catch (e) {}
+            show('A new code was sent to your email.', false);
+            updateTimer();
+          } catch (err) {
+            console.warn('Resend failed', err);
+            show(err.message || 'Failed to resend code.', true);
+            resendBtn.disabled = false;
+          }
+        });
+
+        // Start timer updates
+        updateTimer();
+        setInterval(updateTimer, 1000);
+      })();
     </script>
   </body>
 </html>
