@@ -8,3 +8,5 @@ google-auth==2.26.1
 google-auth-oauthlib==1.2.0
 google-auth-httplib2==0.2.0
 google-cloud-firestore==2.15.0
+gunicorn==22.2.0
+a2wsgi==0.6.0
