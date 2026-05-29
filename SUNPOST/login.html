@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SunPOST - Login</title>
+    <link rel="stylesheet" href="sunpostloginsignup.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="animated-background" aria-hidden="true">
+        <div class="bg-slide slide-1"></div>
+        <div class="bg-slide slide-2"></div>
+        <div class="bg-slide slide-3"></div>
+        <div class="bg-slide slide-4"></div>
+        <div class="bg-slide slide-5"></div>
+      </div>
+      <div class="signup-wrapper">
+        <section class="bg-panel">
+          <div class="brand-panel">
+            <div class="brand-mark"></div>
+            <div>
+              <p class="eyebrow">SunPOST</p>
+              <h1>Welcome back</h1>
+              <p>
+                Login to continue managing your creative portfolio, sharing artwork,
+                and connecting with the SunPost community.
+              </p>
+            </div>
+          </div>
+          <div class="feature-panel small-panel">
+            <div class="feature-card">
+              <p>Login securely and return to your creative workspace in one click.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <div class="card-header">
+            <p>Login</p>
+          </div>
+          <form id="login-form" class="signup-form" novalidate onsubmit="return false;">
+            <div class="input-group">
+              <label for="email">Email address</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input id="password" type="password" name="password" placeholder="Password" required />
+            </div>
+            <label class="checkbox-label">
+              <input type="checkbox" name="remember" />
+              Remember me
+            </label>
+            <button type="button" id="login-button" class="submit-btn">Login</button>
+            <div class="auth-divider"><span>or</span></div>
+            <button type="button" id="google-login-button" class="google-auth-btn">
+              <span class="google-mark" aria-hidden="true">G</span>
+              Continue with Google account
+            </button>
+            <p id="login-message" class="form-message" aria-live="polite"></p>
+            <div id="email-verification-warning" class="mfa-section hidden" aria-live="polite">
+              <p id="email-verification-warning-text">Your email is not verified. Please check your inbox for the verification email and click the link to verify your account.</p>
+              <div class="login-actions">
+                <button type="button" id="resend-verification-btn" class="submit-btn">Resend verification email</button>
+              </div>
+            </div>
+            <p class="alt-action">
+              New to SunPost?
+              <a id="create-account-link" href="signup.html">Create a new account</a>
+            </p>
+          </form>
+        </section>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js" defer></script>
+    <script src="site-config.js?v=3" defer></script>
+    <script src="firebase-config.js?v=3" defer></script>
+    <script src="auth.js?v=3" defer></script>
+  </body>
+</html>

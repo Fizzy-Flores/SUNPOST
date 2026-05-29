@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "^/$", "dest": "/login.html" },
+    { "src": "^/firebase-client-config$", "dest": "/api/firebase-client-config" },
+    { "src": "^/diagnostics$", "dest": "/api/diagnostics" },
+    { "src": "^/public/(.*)$", "dest": "/api/public/$1" },
+    { "handle": "filesystem" },
+    { "src": "^/.*$", "dest": "/index.html" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "deploy:sunpost": "npx vercel deploy SUNPOST --prod --yes --project sunpost",
+    "deploy": "npm run deploy:sunpost"
+  },
+  "devDependencies": {
+    "vercel": "^54.4.1"
+  }
+}

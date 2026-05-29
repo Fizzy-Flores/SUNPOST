@@ -1,0 +1,423 @@
+:root {
+  color-scheme: dark;
+  --background: #3c1f13;
+  --panel: rgba(146, 79, 33, 0.9);
+  --panel-soft: rgba(255, 233, 188, 0.95);
+  --text: #f8e4c1;
+  --muted: #f2d9b1;
+  --border: rgba(255, 255, 255, 0.14);
+  --accent: #f7c58a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, rgba(255, 223, 139, 0.22), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(255, 182, 110, 0.18), transparent 18%),
+    linear-gradient(180deg, #8c4f2e 0%, #3e1e11 100%);
+  color: var(--text);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:linear-gradient(135deg,rgba(255,230,176,0.2),rgba(248,228,193,0.1));border-radius:999px}
+::-webkit-scrollbar-thumb{background:linear-gradient(135deg,#ffe6b0,#f7c58a);border-radius:999px;border:3px solid rgba(255,255,255,0.15)}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(135deg,#ffd87d,#f7c58a)}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.signup-wrapper {
+  width: min(1200px, 100%);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+}
+
+.bg-panel,
+.form-card {
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg-panel {
+  background: linear-gradient(180deg, rgba(255, 217, 156, 0.16), rgba(128, 58, 20, 0.7));
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 700px;
+  border: 1px solid var(--border);
+}
+
+.bg-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.16), transparent 16%),
+    radial-gradient(circle at 80% 15%, rgba(255, 224, 166, 0.18), transparent 15%),
+    radial-gradient(circle at 45% 80%, rgba(255, 255, 255, 0.08), transparent 12%);
+  pointer-events: none;
+}
+
+.brand-panel,
+.feature-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-panel {
+  display: flex;
+  gap: 1.8rem;
+  align-items: flex-start;
+}
+
+.brand-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 241, 194, 0.9), rgba(255, 172, 99, 0.92));
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.12);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.bg-panel h1 {
+  font-size: clamp(2.2rem, 3vw, 4rem);
+  line-height: 1.05;
+  max-width: 12ch;
+}
+
+.bg-panel p {
+  max-width: 42ch;
+  margin-top: 1.2rem;
+  color: rgba(248, 228, 193, 0.95);
+  line-height: 1.8;
+}
+
+.feature-panel {
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  padding: 1.4rem 1.6rem;
+  border-radius: 24px;
+  background: rgba(255, 233, 188, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.feature-card p {
+  color: rgba(248, 228, 193, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.form-card {
+  background: rgba(27, 12, 8, 0.96);
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
+}
+
+.card-header {
+  margin-bottom: 2rem;
+}
+
+.card-header p {
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+}
+
+.signup-form {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.input-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mfa-section {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.login-actions {
+  display: grid;
+  gap: 1rem;
+}
+
+.input-group.half {
+  width: 100%;
+}
+
+label {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='url'],
+input[type='tel'] {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+}
+
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+input[type='password']::placeholder,
+input[type='url']::placeholder,
+input[type='tel']::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.checkbox-label input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #f7c58a;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #f7c58a, #d9773f);
+  color: #1f0c04;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(255, 175, 85, 0.25);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: rgba(248, 228, 193, 0.75);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.google-auth-btn {
+  width: 100%;
+  min-height: 3.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.94);
+  color: #1f0c04;
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.google-auth-btn:hover {
+  transform: translateY(-1px);
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.google-mark {
+  width: 1.55rem;
+  height: 1.55rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #4285f4;
+  font-weight: 800;
+  font-family: Arial, sans-serif;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.alt-action {
+  color: rgba(248, 228, 193, 0.8);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.alt-action a {
+  color: #ffe7c9;
+  text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .signup-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .bg-panel {
+    min-height: auto;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.animated-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: 160% 160%;
+  background-position: center;
+  filter: blur(0.35px) saturate(1.12);
+  animation: fadeSlides 20s ease-in-out infinite;
+}
+
+.bg-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 45%);
+}
+
+.bg-slide.slide-1 {
+  background-image: url('IMAGE/art1.jpg');
+  animation-delay: 0s;
+}
+
+.bg-slide.slide-2 {
+  background-image: url('IMAGE/art2.jpg');
+  animation-delay: 5s;
+}
+
+.bg-slide.slide-3 {
+  background-image: url('IMAGE/art3.jpg');
+  animation-delay: 10s;
+}
+
+.bg-slide.slide-4 {
+  background-image: url('IMAGE/art4.jpg');
+  animation-delay: 15s;
+}
+
+.bg-slide.slide-5 {
+  background-image: url('IMAGE/art5.jpg');
+  animation-delay: 20s;
+}
+
+.bg-slide {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@keyframes fadeSlides {
+  0%,
+  18%,
+  100% {
+    opacity: 0;
+  }
+
+  20%,
+  44% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slowPan {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1.05) translate(-3%, -2%);
+  }
+
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.bg-slide {
+  animation: fadeSlides 20s ease-in-out infinite;
+}
+
+.bg-slide {
+  animation-name: fadeSlides, slowPan;
+  animation-duration: 20s, 40s;
+  animation-timing-function: ease-in-out, ease;
+  animation-iteration-count: infinite, infinite;
+}

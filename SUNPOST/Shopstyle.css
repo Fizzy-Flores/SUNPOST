@@ -1,0 +1,27 @@
+/* Shop-specific styles moved from homepagestyle.css */
+
+/* Smaller, left-aligned variant for shop tab modal only */
+#shopTabModal .payment-modal{width:min(78vw,640px);max-width:640px;padding:18px 20px}
+#shopTabModal .modal-top{grid-template-columns:50% 48%;gap:12px}
+#shopTabModal .modal-image{padding-bottom:72%}
+#shopTabModal .modal-info, #shopTabModal .modal-description, #shopTabModal .tab-modal-note, #shopTabModal .modal-actions{text-align:left}
+#shopTabModal .modal-title{font-size:1.25rem}
+#shopTabModal .modal-artist{font-size:0.9rem}
+
+/* Shop tabs (large boxed buttons) */
+.shop-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;align-items:center;margin-bottom:14px}
+.shop-tabs .tab{background:var(--panel);color:#f8e4c1;padding:18px 14px;border-radius:12px;text-align:center;font-weight:700;font-size:0.95rem;min-height:56px;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 6px 12px rgba(0,0,0,0.10);transition:transform 0.18s ease,box-shadow 0.18s ease}
+.shop-tabs .tab:hover{transform:translateY(-3px);box-shadow:0 14px 24px rgba(0,0,0,0.14)}
+
+@media (max-width:900px){
+	.shop-tabs{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Category grid cards used on Shops landing */
+.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:20px}
+.category-card{display:flex;align-items:center;justify-content:center;background:var(--panel);color:#f8e4c1;padding:22px 18px;border-radius:14px;text-decoration:none;font-weight:700;font-size:1rem;min-height:72px;border:none;box-shadow:0 8px 16px rgba(0,0,0,0.12);transition:transform 0.18s ease,box-shadow 0.18s ease}
+.category-card:hover{transform:translateY(-3px);box-shadow:0 18px 32px rgba(0,0,0,0.14)}
+
+@media (max-width:900px){
+	.category-grid{grid-template-columns:repeat(2,1fr)}
+}

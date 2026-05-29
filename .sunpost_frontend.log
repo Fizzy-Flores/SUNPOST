@@ -1,0 +1,303 @@
+Traceback (most recent call last):
+  File "/home/xian-flores/new-project/Sunpost-frontend/serve.py", line 31, in <module>
+    port = find_free_port(start_port)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/Sunpost-frontend/serve.py", line 22, in find_free_port
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 233, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+PermissionError: [Errno 1] Operation not permitted
+127.0.0.1 - - [24/May/2026 09:32:02] "GET / HTTP/1.1" 200 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'
+Serving SunPost at http://0.0.0.0:8080
+Opening site in your default browser...
+Press Ctrl+C to stop.
+Traceback (most recent call last):
+127.0.0.1 - - [24/May/2026 09:32:38] "GET / HTTP/1.1" 200 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'
+127.0.0.1 - - [24/May/2026 09:33:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /homepagestyle.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /IMAGE/pfp.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /IMAGE/thumb1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /login.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /sunpostloginsignup.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /firebase-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /IMAGE/art1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /IMAGE/art2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /IMAGE/art3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /IMAGE/art4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:23] "GET /IMAGE/art5.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:33:27] "GET /signup.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:37:25] "GET / HTTP/1.1" 200 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'
+127.0.0.1 - - [24/May/2026 09:37:48] "GET /signup.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /signup.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /sunpostloginsignup.css HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /firebase-config.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /IMAGE/art2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /IMAGE/art1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /IMAGE/art3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /IMAGE/art4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:38:01] "GET /IMAGE/art5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:38:39] "GET /login.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:38:39] "GET /auth.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:39:16] "GET /index.html HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:39:16] "GET /IMAGE/pfp.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:39:16] "GET /homepagestyle.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:39:16] "GET /auth.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:45:19] "GET / HTTP/1.1" 200 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'
+127.0.0.1 - - [24/May/2026 09:45:54] "GET /signup.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /signup.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /sunpostloginsignup.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /IMAGE/art1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /IMAGE/art2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /IMAGE/art3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /IMAGE/art4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:18] "GET /IMAGE/art5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:28] "GET /signup.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:29] "GET /sunpostloginsignup.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:29] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:29] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 09:46:29] "GET /IMAGE/art1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:29] "GET /IMAGE/art2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:29] "GET /IMAGE/art3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:29] "GET /IMAGE/art4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 09:46:29] "GET /IMAGE/art5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:14:42] "GET / HTTP/1.1" 200 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'
+127.0.0.1 - - [24/May/2026 10:15:00] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /signup.html HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /sunpostloginsignup.css HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /IMAGE/art1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /IMAGE/art2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /IMAGE/art3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /IMAGE/art4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:07] "GET /IMAGE/art5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /signup.html HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /sunpostloginsignup.css HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /IMAGE/art1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /IMAGE/art2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /IMAGE/art3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /IMAGE/art5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:25] "GET /IMAGE/art4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:50] "GET /login.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:15:50] "GET /site-config.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:15:50] "GET /auth.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:21:08] "GET / HTTP/1.1" 200 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'
+127.0.0.1 - - [24/May/2026 10:21:29] "GET /login.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:21:30] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:21:30] "GET /signup.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:23:42] "GET /login.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:23:42] "GET /sunpostloginsignup.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:23:42] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:23:42] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:23:59] "GET /login.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:23:59] "GET /sunpostloginsignup.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:23:59] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:23:59] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:31:28] "GET / HTTP/1.1" 200 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'
+127.0.0.1 - - [24/May/2026 10:31:47] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:31:47] "GET /firebase-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /login.html HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /sunpostloginsignup.css HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /IMAGE/art1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /IMAGE/art2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /IMAGE/art3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /IMAGE/art4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 10:32:10] "GET /IMAGE/art5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:07] "GET / HTTP/1.1" 200 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'
+127.0.0.1 - - [24/May/2026 17:17:20] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /IMAGE/pfp.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /homepagestyle.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /IMAGE/thumb1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /IMAGE/thumb2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /login.html HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /sunpostloginsignup.css HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /firebase-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /IMAGE/art4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /IMAGE/art2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:20] "GET /IMAGE/art1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:21] "GET /IMAGE/art3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:21] "GET /IMAGE/art5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:17:21] code 404, message File not found
+127.0.0.1 - - [24/May/2026 17:17:21] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [24/May/2026 17:23:06] "GET /login.html HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:06] "GET /sunpostloginsignup.css HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:06] "GET /site-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:23:06] "GET /auth.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:07] "GET /firebase-config.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:23:07] "GET /IMAGE/art1.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:07] "GET /IMAGE/art2.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:07] "GET /IMAGE/art3.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:07] "GET /IMAGE/art4.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:07] "GET /IMAGE/art5.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:15] "GET /site-config.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:23:44] "GET /index.html HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:28:24] "GET /site-config.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:28:30] "GET /site-config.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/May/2026 17:36:04] "GET /signup.html HTTP/1.1" 200 -
+127.0.0.1 - - [24/May/2026 17:36:04] "GET /site-config.js HTTP/1.1" 304 -
+127.0.0.1 - - [25/May/2026 20:38:03] "GET / HTTP/1.1" 302 -
+/usr/bin/xdg-open: 882: x-www-browser: not found
+/usr/bin/xdg-open: 882: firefox: not found
+/usr/bin/xdg-open: 882: iceweasel: not found
+/usr/bin/xdg-open: 882: seamonkey: not found
+/usr/bin/xdg-open: 882: mozilla: not found
+/usr/bin/xdg-open: 882: epiphany: not found
+/usr/bin/xdg-open: 882: konqueror: not found
+/usr/bin/xdg-open: 882: chromium: not found
+/usr/bin/xdg-open: 882: chromium-browser: not found
+/usr/bin/xdg-open: 882: google-chrome: not found
+/usr/bin/xdg-open: 882: www-browser: not found
+/usr/bin/xdg-open: 882: links2: not found
+/usr/bin/xdg-open: 882: elinks: not found
+/usr/bin/xdg-open: 882: links: not found
+/usr/bin/xdg-open: 882: lynx: not found
+/usr/bin/xdg-open: 882: w3m: not found
+xdg-open: no method available for opening 'http://127.0.0.1:8080/login.html'

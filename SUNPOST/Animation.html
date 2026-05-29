@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Animation — SUNPOST</title>
+    <link rel="stylesheet" href="homepagestyle.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="brand"><img src="IMAGE/SUN ICON.PNG" alt="SunPOST logo" class="brand-logo"><a href="Homepage.html">SunPOST</a></div>
+          <nav class="tabs">
+            <a href="Homepage.html" class="tab">Home</a>
+            <a href="Commission.html" class="tab">Commissions</a>
+            <a href="Shops.html" class="tab">Shop</a>
+          </nav>
+          <div class="search-user">
+            <label class="search">
+              <input type="search" placeholder="Search products, artists..." />
+              <button type="button" class="search-btn" aria-label="Search">🔍</button>
+            </label>
+            <div class="user-icon-container">
+              <button type="button" class="profile-button" aria-label="Profile menu">
+                <img src="IMAGE/PFP PLACEHOLDER.png" alt="you" />
+              </button>
+              <div class="profile-dropdown">
+                <ul class="profile-dropdown-menu">
+                  <li><a href="Account.html"><span class="dropdown-icon">👤</span> My Profile</a></li>
+                  <li><a href="#logout" id="logoutLink"><span class="dropdown-icon">🚪</span> Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <h2 style="margin:12px 0 18px;color:var(--panel)">Animation</h2>
+        <p><a class="back-link" href="Shops.html">← Back to Shop</a></p>
+        <p style="margin-bottom:18px;color:#5b2b18">Animations, rigs, and motion loops.</p>
+        <section class="shop-list">
+          <div class="mentions-grid commissions-grid">
+            <article class="mention commission-card product-card" data-title="Loop Animation" data-artist="Animator A" data-price="$18" data-desc="Seamless loop." data-image="IMAGE/comm3.jpg" data-paypal="true" data-venmo="false">
+              <img src="IMAGE/comm3.jpg" alt="anim 1" />
+              <p class="commission-title">Loop Animation</p>
+              <p class="commission-desc">$18 · MP4/GIF</p>
+            </article>
+            <article class="mention commission-card product-card" data-title="Rigged Sprite" data-artist="Animator B" data-price="$30" data-desc="Sprite rig with controllers." data-image="IMAGE/comm4.jpg" data-paypal="true" data-venmo="true">
+              <img src="IMAGE/comm4.jpg" alt="anim 2" />
+              <p class="commission-title">Rigged Sprite</p>
+              <p class="commission-desc">$30 · Spine/Unity</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      document.querySelectorAll('.product-card').forEach(c => c.addEventListener('click', () => { window.location = 'Shops.html'; }));
+    </script>
+    <script src="profile-dropdown.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+# Copy this file to terraform.tfvars and fill in your values
+# DO NOT commit terraform.tfvars to GitHub (add to .gitignore)
+
+vercel_api_token = "YOUR_VERCEL_API_TOKEN_HERE"
+vercel_team_id   = "YOUR_VERCEL_TEAM_ID_HERE"
+github_repo      = "yourusername/sunpost"
+api_url          = "https://sunpost-backend.onrender.com"
+project_name     = "sunpost-frontend"

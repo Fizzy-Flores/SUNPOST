@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SUNPOST — Shop</title>
+    <link rel="stylesheet" href="homepagestyle.css" />
+    <link rel="stylesheet" href="Shopstyle.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="brand"><img src="IMAGE/SUN ICON.PNG" alt="SunPOST logo" class="brand-logo"><a href="Homepage.html">SunPOST</a></div>
+          <nav class="tabs">
+            <a href="Homepage.html" class="tab">Home</a>
+            <a href="Commission.html" class="tab">Commissions</a>
+            <a href="Shops.html" class="tab active">Shop</a>
+          </nav>
+          <div class="search-user">
+            <label class="search">
+              <input type="search" placeholder="Search products, artists..." />
+              <button type="button" class="search-btn" aria-label="Search">🔍</button>
+            </label>
+            <div class="user-icon-container">
+              <button type="button" class="profile-button" aria-label="Profile menu">
+                <img src="IMAGE/PFP PLACEHOLDER.png" alt="you" />
+              </button>
+              <div class="profile-dropdown">
+                <ul class="profile-dropdown-menu">
+                  <li><a href="Account.html"><span class="dropdown-icon">👤</span> My Profile</a></li>
+                  <li><a href="#logout" id="logoutLink"><span class="dropdown-icon">🚪</span> Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <h2 style="margin:12px 0 18px;color:var(--panel)">Shop</h2>        <a class="cta" href="Commission.html" style="margin-bottom:18px;display:inline-block">Browse commissions</a>
+        <section class="shop-categories">
+          <div class="category-grid">
+            <a class="category-card" href="CharacterDesigns.html">Character Designs</a>
+            <a class="category-card" href="3DMakers.html">3D Makers</a>
+            <a class="category-card" href="Educational.html">Educational</a>
+            <a class="category-card" href="Music.html">Music</a>
+            <a class="category-card" href="Writing.html">Literature</a>
+            <a class="category-card" href="Emotes.html">Emotes</a>
+            <a class="category-card" href="Animation.html">Animation</a>
+            <a class="category-card" href="VoiceActing.html">Voice Acting</a>
+          </div>
+
+          <div class="shop-tabs">
+            <button class="tab" data-shop-tab="Licenses">Licenses</button>
+            <button class="tab" data-shop-tab="Service Options">Service Options</button>
+            <button class="tab" data-shop-tab="On Sale">On Sale</button>
+            <button class="tab" data-shop-tab="New Arrivals">New Arrivals</button>
+            <button class="tab" data-shop-tab="Collections">Collections</button>
+          </div>
+        </section>
+
+        <section class="shop-list">
+          <div class="mentions-grid commissions-grid">
+            <article class="mention commission-card product-card" data-title="Sticker pack — Flora" data-artist="Artist A" data-price="$6" data-desc="Cute sticker pack." data-image="comm1.jpg" data-paypal="true" data-venmo="true" data-license="Personal use only" data-commercial="false" data-merch="false" data-service="Digital download" data-sale="false" data-new-arrival="false" data-collection="Sticker packs">
+              <img src="IMAGE/comm1.jpg" alt="product 1" />
+              <p class="commission-title">Sticker pack — Flora</p>
+              <p class="commission-desc">$6 · Instant download</p>
+            </article>
+            <article class="mention commission-card product-card" data-title="Icon set — Minimal" data-artist="Artist B" data-price="$12" data-desc="Set of 20 icons." data-image="comm2.jpg" data-paypal="true" data-venmo="false" data-license="Personal use only" data-commercial="false" data-merch="false" data-service="Digital download" data-sale="true" data-new-arrival="false" data-collection="Icon sets">
+              <img src="IMAGE/comm2.jpg" alt="product 2" />
+              <p class="commission-title">Icon set — Minimal</p>
+              <p class="commission-desc">$12 · Personal use</p>
+            </article>
+            <article class="mention commission-card product-card" data-title="3D Model — Robot" data-artist="Artist C" data-price="$35" data-desc="Low-poly robot model." data-image="comm3.jpg" data-paypal="true" data-venmo="true" data-license="Commercial use allowed" data-commercial="true" data-merch="false" data-service="3D asset files" data-sale="false" data-new-arrival="true" data-collection="3D models">
+              <img src="IMAGE/comm3.jpg" alt="product 3" />
+              <p class="commission-title">3D Model — Robot</p>
+              <p class="commission-desc">$35 · OBJ/FBX</p>
+            </article>
+            <article class="mention commission-card product-card" data-title="Music Loop Pack" data-artist="Artist D" data-price="$20" data-desc="Royalty-free loops." data-image="comm4.jpg" data-paypal="true" data-venmo="false" data-license="Commercial use allowed" data-commercial="true" data-merch="false" data-service="Audio loops" data-sale="true" data-new-arrival="true" data-collection="Music packs">
+              <img src="IMAGE/comm4.jpg" alt="product 4" />
+              <p class="commission-title">Music Loop Pack</p>
+              <p class="commission-desc">$20 · MP3/WAV</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- Reuse homepage-style modal for product checkout -->
+      <div class="modal-overlay" id="shopPaymentModal" aria-hidden="true">
+        <div class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="shopModalTitle">
+          <button class="close-btn" aria-label="Close payment popup">×</button>
+          <div class="modal-top">
+            <div class="modal-image"><img src="IMAGE/comm1.jpg" alt="Product preview" id="shopModalImage" /></div>
+            <div class="modal-info">
+              <p class="modal-artist" id="shopModalArtist">Artist</p>
+              <h2 class="modal-title" id="shopModalTitle">Product Title</h2>
+              <p class="modal-description" id="shopModalDesc">Product details appear here when a product is selected.</p>
+              <p class="modal-price" id="shopModalPrice">$0</p>
+              <div class="payment-method-row">
+                <label for="shopPaymentService">Choose payment service</label>
+                <select id="shopPaymentService" class="payment-select">
+                  <option value="paypal">PayPal</option>
+                  <option value="venmo">Venmo</option>
+                </select>
+                <div id="shopPaymentMethodNote" class="payment-method-note"></div>
+              </div>
+            </div>
+          </div>
+          <div class="payment-step detail-step" id="shopDetailStep">
+            <div class="modal-actions detail-actions">
+              <button class="cancel-btn proceed-btn" id="shopProceedPayment" type="button">Continue</button>
+              <button class="cancel-btn" type="button">Cancel</button>
+            </div>
+          </div>
+          <div class="payment-step payment-step--paypal" id="shopPaymentStep">
+            <div class="payment-summary">
+              <p>Pay for: <strong id="shopPaypalServiceTitle">Product</strong></p>
+              <p>Amount: <strong id="shopPaypalServicePrice">$0</strong></p>
+            </div>
+            <div id="shopPaymentMethodSummary" class="payment-method-summary"></div>
+            <div id="shop-paypal-button-container"></div>
+            <div class="modal-actions">
+              <button style="align-self:right" class="cancel-btn" type="button">Cancel</button>
+            </div>
+          </div>
+          <div class="payment-step receipt-step" id="shopReceiptStep">
+            <div class="receipt-note">Payment successful!</div>
+            <p class="receipt-text">Thank you for your purchase. A confirmation email has been sent.</p>
+            <button class="pay-btn" id="shopDoneBtn">Done</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-overlay" id="shopTabModal" aria-hidden="true">
+        <div class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="shopTabModalTitle">
+          <button class="close-btn" aria-label="Close tab details popup">×</button>
+          <div class="modal-top">
+            <div class="modal-info">
+              <h2 class="modal-title" id="shopTabModalTitle">Shop details</h2>
+              <p class="modal-description" id="shopTabModalIntro">Select one of the shop tabs to see more specific product usage options.</p>
+              <div class="payment-method-row" style="margin-top:12px">
+                <div class="tab-filters" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                  <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="filterCommercial" /> Commercial use</label>
+                  <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="filterMerch" /> Merchandise / print rights</label>
+                </div>
+                <div style="margin-top:8px;color:#ffd87d">(Enable filters to narrow artists shown below)</div>
+              </div>
+            </div>
+          </div>
+          <div id="shopTabModalContent" class="payment-step" style="display:block;margin-top:8px"></div>
+          <div class="tab-modal-note" id="shopTabModalNote" style="margin-top:12px"></div>
+          <div class="modal-actions" style="margin-top:16px">
+            <button class="cancel-btn" id="shopTabModalClose" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+    <script>
+      const shopModal = document.getElementById('shopPaymentModal');
+      const shopModalImage = document.getElementById('shopModalImage');
+      const shopModalArtist = document.getElementById('shopModalArtist');
+      const shopModalTitle = document.getElementById('shopModalTitle');
+      const shopModalPrice = document.getElementById('shopModalPrice');
+      const shopModalDesc = document.getElementById('shopModalDesc');
+      const shopDetailStep = document.getElementById('shopDetailStep');
+      const shopPaymentStep = document.getElementById('shopPaymentStep');
+      const shopPaypalServiceTitle = document.getElementById('shopPaypalServiceTitle');
+      const shopPaypalServicePrice = document.getElementById('shopPaypalServicePrice');
+      const shopReceiptStep = document.getElementById('shopReceiptStep');
+      const shopPaymentService = document.getElementById('shopPaymentService');
+      const shopPaymentMethodNote = document.getElementById('shopPaymentMethodNote');
+      const shopPaymentMethodSummary = document.getElementById('shopPaymentMethodSummary');
+      const shopPaypalButtonContainer = document.getElementById('shop-paypal-button-container');
+      const shopProceedPayment = document.getElementById('shopProceedPayment');
+      const shopDoneBtn = document.getElementById('shopDoneBtn');
+      const shopCloseButtons = shopModal.querySelectorAll('.close-btn, .cancel-btn');
+      const shopTabModal = document.getElementById('shopTabModal');
+      const shopTabModalTitle = document.getElementById('shopTabModalTitle');
+      const shopTabModalIntro = document.getElementById('shopTabModalIntro');
+      const shopTabModalContent = document.getElementById('shopTabModalContent');
+      const shopTabModalNote = document.getElementById('shopTabModalNote');
+      const shopTabModalClose = document.getElementById('shopTabModalClose');
+      const shopTabButtons = document.querySelectorAll('.shop-tabs .tab');
+      const shopTabModalCloseButtons = shopTabModal.querySelectorAll('.close-btn, .cancel-btn');
+      const filterCommercial = document.getElementById('filterCommercial');
+      const filterMerch = document.getElementById('filterMerch');
+      let currentTabOpen = null;
+      let shopAmount = '0';
+      let shopSupport = { paypal: true, venmo: false };
+
+      const productCards = Array.from(document.querySelectorAll('.product-card'));
+
+      const shopTabInfo = {
+        'Licenses': {
+          title: 'Licenses & Usage',
+          intro: 'Click each license type to see which artists support it.',
+          note: 'Artists are grouped by the rights they offer so you can find the right match for commercial, personal, or merchandise use.'
+        },
+        'Service Options': {
+          title: 'Service Options',
+          intro: 'Browse artists by the kind of finished product delivery they offer.',
+          note: 'Helpful when you need a certain format, such as audio, 3D assets, or digital download files.'
+        },
+        'On Sale': {
+          title: 'On Sale Products',
+          intro: 'See which artists have discounted or bundle-ready items available right now.',
+          note: 'Sale products may still include strong usage rights, so check the license details in this popup.'
+        },
+        'New Arrivals': {
+          title: 'New Arrivals',
+          intro: 'Discover recently added artists and fresh products in the shop.',
+          note: 'New artists often post new license options and updated service packages.'
+        },
+        'Collections': {
+          title: 'Collections',
+          intro: 'Explore artist collections organized by type of product or creative focus.',
+          note: 'Collections help you find multiple artists with similar styles and usage terms.'
+        }
+      };
+
+      function groupBy(array, keyFn) {
+        return array.reduce((acc, item) => {
+          const key = keyFn(item);
+          if (!acc[key]) acc[key] = [];
+          acc[key].push(item);
+          return acc;
+        }, {});
+      }
+
+      function buildTabContent(tabName) {
+          // read current filter settings
+          const commercialFilter = (filterCommercial && filterCommercial.checked) || false;
+          const merchFilter = (filterMerch && filterMerch.checked) || false;
+          // pre-filter cards according to checkboxes
+          const filteredCards = productCards.filter(card => {
+            if (commercialFilter && card.dataset.commercial !== 'true') return false;
+            if (merchFilter && card.dataset.merch !== 'true') return false;
+            return true;
+          });
+
+          if (tabName === 'Licenses') {
+            const groups = groupBy(filteredCards, card => card.dataset.license || 'Unknown license');
+            return Object.entries(groups).map(([license, cards]) => {
+              const items = cards.map(card => {
+                const artist = card.dataset.artist || 'Unknown';
+                const title = card.dataset.title || '';
+                const price = card.dataset.price || '';
+                const service = card.dataset.service || '';
+                const details = `${service ? service + ' · ' : ''}${price ? price : ''}`.trim();
+                return `<li><strong>${artist}</strong> — ${title}${details ? ' (' + details + ')' : ''}</li>`;
+              }).join('');
+              return `<h3 class="tab-modal-label">${license}</h3><ul>${items}</ul>`;
+            }).join('');
+          }
+
+        if (tabName === 'Service Options') {
+          const groups = groupBy(filteredCards, card => card.dataset.service || 'Other services');
+          return Object.entries(groups).map(([service, cards]) => {
+            const items = cards.map(card => `<li><strong>${card.dataset.artist}</strong> — ${card.dataset.title}</li>`).join('');
+            return `<h3 class="tab-modal-label">${service}</h3><ul>${items}</ul>`;
+          }).join('');
+        }
+
+        if (tabName === 'On Sale') {
+          const cards = productCards.filter(card => card.dataset.sale === 'true');
+          if (!cards.length) return '<p>No sale artists are available right now.</p>';
+          return `<ul>${cards.map(card => `<li><strong>${card.dataset.artist}</strong> — ${card.dataset.title} (${card.dataset.price})</li>`).join('')}</ul>`;
+        }
+
+        if (tabName === 'New Arrivals') {
+          const cards = productCards.filter(card => card.dataset.newArrival === 'true');
+          if (!cards.length) return '<p>No new arrival artists are available right now.</p>';
+          return `<ul>${cards.map(card => `<li><strong>${card.dataset.artist}</strong> — ${card.dataset.title}</li>`).join('')}</ul>`;
+        }
+
+        if (tabName === 'Collections') {
+          const groups = groupBy(productCards, card => card.dataset.collection || 'Other collections');
+          return Object.entries(groups).map(([collection, cards]) => {
+            const items = cards.map(card => `<li><strong>${card.dataset.artist}</strong> — ${card.dataset.title}</li>`).join('');
+            return `<h3 class="tab-modal-label">${collection}</h3><ul>${items}</ul>`;
+          }).join('');
+        }
+
+        return '<p>No details are available for this selection.</p>';
+      }
+
+      function showShopStep(step) {
+        shopDetailStep.style.display = step === 'details' ? 'block' : 'none';
+        shopPaymentStep.style.display = step === 'payment' ? 'block' : 'none';
+        shopReceiptStep.style.display = step === 'receipt' ? 'block' : 'none';
+      }
+
+      function getNumericAmountShop(price) {
+        return price.replace(/[^0-9.]/g, '') || '0';
+      }
+
+      function openShopTabModal(tabName) {
+        currentTabOpen = tabName;
+        const info = shopTabInfo[tabName] || shopTabInfo['Licenses'];
+        shopTabModalTitle.textContent = info.title;
+        shopTabModalIntro.textContent = info.intro;
+        shopTabModalContent.innerHTML = buildTabContent(tabName);
+        shopTabModalNote.textContent = info.note;
+        shopTabModal.classList.add('open');
+        shopTabModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeShopTabModal() {
+        shopTabModal.classList.remove('open');
+        shopTabModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function updateShopMethodNote() {
+        const sel = shopPaymentService.value;
+        const ok = shopSupport[sel];
+        if (!ok) {
+          shopPaymentMethodNote.textContent = 'This artist does not use that payment method.';
+          shopProceedPayment.disabled = true;
+          shopProceedPayment.textContent = 'Continue';
+          return;
+        }
+        shopProceedPayment.disabled = false;
+        shopProceedPayment.textContent = sel === 'paypal' ? 'Continue to PayPal' : 'Continue to Venmo';
+        shopPaymentMethodNote.textContent = sel === 'paypal' ? 'PayPal available.' : 'Venmo available.';
+      }
+
+      function updateShopPaymentStep() {
+        const sel = shopPaymentService.value;
+        if (sel === 'paypal' && shopSupport.paypal) {
+          shopPaymentMethodSummary.textContent = 'Complete your PayPal checkout below.';
+          shopPaypalButtonContainer.style.display = 'block';
+        } else if (sel === 'venmo' && shopSupport.venmo) {
+          shopPaymentMethodSummary.textContent = 'Pay the artist via Venmo using their handle.';
+          shopPaypalButtonContainer.style.display = 'none';
+        } else {
+          shopPaymentMethodSummary.textContent = 'This payment method is not supported for this product.';
+          shopPaypalButtonContainer.style.display = 'none';
+        }
+      }
+
+      function openShopModal(card) {
+        shopModalImage.src = card.dataset.image;
+        shopModalArtist.textContent = card.dataset.artist;
+        shopModalTitle.textContent = card.dataset.title;
+        shopModalPrice.textContent = card.dataset.price;
+        shopModalDesc.textContent = card.dataset.desc;
+        shopPaypalServiceTitle.textContent = card.dataset.title;
+        shopPaypalServicePrice.textContent = card.dataset.price;
+        shopAmount = getNumericAmountShop(card.dataset.price);
+        shopSupport = { paypal: card.dataset.paypal === 'true', venmo: card.dataset.venmo === 'true' };
+        shopPaymentService.value = shopSupport.paypal ? 'paypal' : (shopSupport.venmo ? 'venmo' : 'paypal');
+        updateShopMethodNote();
+        showShopStep('details');
+        shopModal.classList.add('open');
+        shopModal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      document.querySelectorAll('.product-card').forEach(c => c.addEventListener('click', () => openShopModal(c)));
+      shopPaymentService.addEventListener('change', updateShopMethodNote);
+      shopProceedPayment.addEventListener('click', () => { showShopStep('payment'); updateShopPaymentStep(); });
+      shopTabButtons.forEach(button => button.addEventListener('click', () => openShopTabModal(button.dataset.shopTab || button.textContent.trim())));
+
+      // refresh modal content when filters change
+      if (filterCommercial) filterCommercial.addEventListener('change', () => { if (currentTabOpen) shopTabModalContent.innerHTML = buildTabContent(currentTabOpen); });
+      if (filterMerch) filterMerch.addEventListener('change', () => { if (currentTabOpen) shopTabModalContent.innerHTML = buildTabContent(currentTabOpen); });
+
+      if (window.paypal) {
+        paypal.Buttons({
+          style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'checkout' },
+          createOrder: function(data, actions) {
+            return actions.order.create({ purchase_units: [{ amount: { value: shopAmount } }] });
+          },
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) { showShopStep('receipt'); });
+          }
+        }).render('#shop-paypal-button-container');
+      }
+
+      shopCloseButtons.forEach(b => b.addEventListener('click', () => { shopModal.classList.remove('open'); shopModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }));
+      shopDoneBtn.addEventListener('click', () => { shopModal.classList.remove('open'); shopModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; });
+      shopTabModalCloseButtons.forEach(b => b.addEventListener('click', closeShopTabModal));
+      shopTabModalClose.addEventListener('click', closeShopTabModal);
+      shopTabModal.addEventListener('click', (event) => { if (event.target === shopTabModal) closeShopTabModal(); });
+    </script>
+    <script src="profile-dropdown.js"></script>
+  </body>
+</html>

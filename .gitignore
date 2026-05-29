@@ -3,3 +3,18 @@ artist-hub/backend/.venv/
 .env
 artist-hub/backend/.env
 CREDENTIALS/
+# Firebase Admin/Service-account credentials (never commit)
+WEBSITE/Sunpost/backend/.env
+WEBSITE/CREDENTIALS/
+WEBSITE/Sunpost/backend/credentials/
+
+# Firebase files/logs (security relevant)
+firebase-debug.log
+firebase-debug.*.log
+
+# Firebase project config that may be sensitive
+.firebaserc
+firebase.json
+firestore.indexes.json
+firestore.rules
+

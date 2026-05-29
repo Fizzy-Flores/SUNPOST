@@ -1,0 +1,36 @@
+/* Commission page specific styles (keeps same look as shop) */
+
+/* Category cards styled like Shop page */
+.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:20px}
+.category-card{display:flex;align-items:center;justify-content:center;background:var(--panel);color:#f8e4c1;padding:22px 18px;border-radius:14px;text-decoration:none;font-weight:700;font-size:1rem;min-height:72px;border:none;box-shadow:0 8px 16px rgba(0,0,0,0.12);transition:transform 0.18s ease,box-shadow 0.18s ease}
+.category-card:hover{transform:translateY(-3px);box-shadow:0 18px 32px rgba(0,0,0,0.14)}
+
+@media (max-width:900px){
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Tabs styled like Shop page */
+.shop-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;align-items:center;margin-bottom:14px}
+.shop-tabs .tab{background:var(--panel);color:#f8e4c1;padding:18px 14px;border-radius:12px;text-align:center;font-weight:700;font-size:0.95rem;min-height:56px;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 6px 12px rgba(0,0,0,0.10);transition:transform 0.18s ease,box-shadow 0.18s ease}
+.shop-tabs .tab:hover{transform:translateY(-3px);box-shadow:0 14px 24px rgba(0,0,0,0.14)}
+
+@media (max-width:900px){
+  .shop-tabs{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Compact commission grid layout */
+.shop-list .mentions-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.shop-list .mention{min-height:200px;padding:8px}
+.shop-list .mention img{width:100%;height:130px;object-fit:cover;border-radius:8px;margin-bottom:6px}
+.shop-list .commission-title{font-size:0.9rem;margin-top:4px}
+.shop-list .commission-desc{font-size:0.8rem;margin-top:2px}
+
+/* Commission tab popup styling */
+#commissionTabModal .payment-modal{width:min(78vw,640px);max-width:640px;padding:20px}
+#commissionTabModal .modal-top{grid-template-columns:1fr;gap:16px}
+#commissionTabModal .modal-image{display:none}
+#commissionTabModal .modal-info{padding:0}
+
+/* Ensure commission modal uses same spacing */
+#paymentModal .modal-top{gap:14px}
+#paymentModal .modal-image{padding-bottom:78%}

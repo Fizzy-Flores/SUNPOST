@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script>
+      (function() {
+        window.location.replace('login.html');
+      })();
+    </script>
+    <title>SUNPOST — Home</title>
+    <link rel="stylesheet" href="homepagestyle.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="brand"><img src="IMAGE/SUN ICON.PNG" alt="SunPOST logo" class="brand-logo"><a href="index.html">SunPOST</a></div>
+          <button id="logout-button" type="button" class="tab logout-tab" aria-label="Sign out">Sign out</button>
+          <nav class="tabs">
+            <a href="index.html" class="tab active">Home</a>
+            <a href="Commission.html" class="tab">Commissions</a>
+            <a href="Shops.html" class="tab">Shop</a>
+          </nav>
+          <div class="search-user">
+            <label class="search">
+              <input type="search" placeholder="Search posts, artists..." />
+              <button type="button" class="search-btn" aria-label="Search">🔍</button>
+            </label>
+            <a href="Account.html" class="user-icon"><img src="IMAGE/PFP PLACEHOLDER.png" alt="you" /></a>
+          </div>
+        </div>
+      </header>
+
+      <header class="artist-banner">
+        <div class="animated-background" aria-hidden="true">
+          <div class="bg-slide slide-1"></div>
+          <div class="bg-slide slide-2"></div>
+          <div class="bg-slide slide-3"></div>
+          <div class="bg-slide slide-4"></div>
+        </div>
+
+        <div class="banner-content">
+          <div class="banner-left">
+            <h2>Artist of the Week</h2>
+            <p class="artist-name">@usernameplaceholder_012345</p>
+            <p class="artist-desc">Featured artwork and quick bio go here. Tap to view the full post.</p>
+            <a class="cta" href="#">View Gallery</a>
+          </div>
+          <div class="banner-right">
+            <div class="art-preview">
+              <img src="IMAGE/PFP PLACEHOLDER.png" alt="artist profile" class="pfp" />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="honorable-mentions">
+          <h3>Honorable Mentions</h3>
+          <div class="mentions-grid">
+            <article class="mention"> <img src="IMAGE/thumb1.jpg" alt="mention 1"/> <p>Artist A</p> </article>
+            <article class="mention"> <img src="IMAGE/thumb2.jpg" alt="mention 2"/> <p>Artist B</p> </article>
+            <article class="mention"> <img src="IMAGE/thumb3.jpg" alt="mention 3"/> <p>Artist C</p> </article>
+            <article class="mention"> <img src="IMAGE/thumb4.jpg" alt="mention 4"/> <p>Artist D</p> </article>
+          </div>
+        </section>
+
+        <section class="commissions">
+          <h3>Commissions</h3>
+          <a class="cta" href="Commission.html">Browse all commissions</a>
+          <div class="mentions-grid commissions-grid">
+            <article class="mention commission-card" data-title="Artist One — Portrait" data-artist="Artist One" data-price="$40" data-desc="A detailed portrait with soft lighting." data-image="IMAGE/comm1.jpg" data-paypal="true" data-venmo="true" data-crypto="false">
+              <img src="IMAGE/comm1.jpg" alt="commission 1" />
+              <p class="commission-title">Artist One — Portrait</p>
+              <p class="commission-desc">Price: $40 · DM to request</p>
+            </article>
+            <article class="mention commission-card" data-title="Artist Two — Icon" data-artist="Artist Two" data-price="$10" data-desc="Clean icons with sharp linework." data-image="IMAGE/comm2.jpg" data-paypal="true" data-venmo="false" data-crypto="true">
+              <img src="IMAGE/comm2.jpg" alt="commission 2" />
+              <p class="commission-title">Artist Two — OC reference</p>
+              <p class="commission-desc">Price: $10 · Quick turnaround</p>
+            </article>
+            <article class="mention commission-card" data-title="Artist Three — Full Scene" data-artist="Artist Three" data-price="$75" data-desc="Full scene illustrations with backgrounds." data-image="IMAGE/comm3.jpg" data-paypal="false" data-venmo="true" data-crypto="true">
+              <img src="IMAGE/comm3.jpg" alt="commission 3" />
+              <p class="commission-title">Artist Three — Full Scene</p>
+              <p class="commission-desc">Quote on request · Backgrounds</p>
+            </article>
+            <article class="mention commission-card" data-title="Artist Four — Chibi" data-artist="Artist Four" data-price="$20" data-desc="Cute chibi characters with expressive poses." data-image="IMAGE/comm4.jpg" data-paypal="true" data-venmo="true" data-crypto="true">
+              <img src="IMAGE/comm4.jpg" alt="commission 4" />
+              <p class="commission-title">Artist Four — Chibi</p>
+              <p class="commission-desc">Small chibis · Price varies</p>
+            </article>
+            <article class="mention commission-card" data-title="Artist Five — Portrait" data-artist="Artist Five" data-price="$50" data-desc="Soft portraits with polished color and lighting." data-image="IMAGE/comm5.jpg" data-paypal="true" data-venmo="false" data-crypto="false">
+              <img src="IMAGE/comm5.jpg" alt="commission 5" />
+              <p class="commission-title">Artist Five — Portrait</p>
+              <p class="commission-desc">Price: $50 · Includes background</p>
+            </article>
+            <article class="mention commission-card" data-title="Artist Six — Flat Color" data-artist="Artist Six" data-price="$18" data-desc="Flat color art with bold outlines." data-image="IMAGE/comm6.jpg" data-paypal="false" data-venmo="true" data-crypto="false">
+              <img src="IMAGE/comm6.jpg" alt="commission 6" />
+              <p class="commission-title">Artist Six — Flat Color</p>
+              <p class="commission-desc">Price: $18 · Fast delivery</p>
+            </article>
+            <article class="mention commission-card" data-title="Artist Seven — Sketch" data-artist="Artist Seven" data-price="$8" data-desc="Quick sketches for ideas and characters." data-image="IMAGE/comm7.jpg" data-paypal="true" data-venmo="false" data-crypto="true">
+              <img src="IMAGE/comm7.jpg" alt="commission 7" />
+              <p class="commission-title">Artist Seven — Sketch</p>
+              <p class="commission-desc">Price: $8 · Simple sketches</p>
+            </article>
+            <article class="mention commission-card" data-title="Artist Eight — Bust" data-artist="Artist Eight" data-price="$30" data-desc="Colored busts with detailed shading." data-image="IMAGE/comm8.jpg" data-paypal="true" data-venmo="true" data-crypto="false">
+              <img src="IMAGE/comm8.jpg" alt="commission 8" />
+              <p class="commission-title">Artist Eight — Bust</p>
+              <p class="commission-desc">Price: $30 · Colored busts</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div class="modal-overlay" id="paymentModal" aria-hidden="true">
+        <div class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+          <button class="close-btn" aria-label="Close payment popup">×</button>
+          <div class="modal-top">
+            <div class="modal-image"><img src="IMAGE/comm1.jpg" alt="Commission preview" id="modalImage" /></div>
+            <div class="modal-info">
+              <p class="modal-artist" id="modalArtist">Artist</p>
+              <h2 class="modal-title" id="modalTitle">Commission Title</h2>
+              <p class="modal-description" id="modalDesc">Commission details appear here when an artist service is selected.</p>
+              <p class="modal-price" id="modalPrice">$0</p>
+              <div class="payment-method-row">
+                <label for="paymentService">Choose payment service</label>
+                <select id="paymentService" class="payment-select">
+                  <option value="paypal">PayPal</option>
+                  <option value="venmo">Venmo</option>
+                </select>
+                <div id="paymentMethodNote" class="payment-method-note"></div>
+              </div>
+            </div>
+          </div>
+          <div class="payment-step detail-step" id="detailStep">
+            <div class="modal-actions detail-actions">
+              <button class="cancel-btn proceed-btn" id="proceedPayment" type="button">Continue</button>
+              <button class="cancel-btn" type="button">Cancel</button>
+            </div>
+          </div>
+          <div class="payment-step payment-step--paypal" id="paymentStep">
+            <div class="payment-summary">
+              <p>Pay for: <strong id="paypalServiceTitle">Commission</strong></p>
+              <p>Amount: <strong id="paypalServicePrice">$0</strong></p>
+            </div>
+            <div id="paymentMethodSummary" class="payment-method-summary"></div>
+            <div id="paypal-button-container"></div>
+            <div class="modal-actions">
+              <button style="align-self:right" class="cancel-btn" type="button">Cancel</button>
+            </div>
+          </div>
+
+          <div class="payment-step receipt-step" id="receiptStep">
+            <div class="receipt-note">Payment successful!</div>
+            <p class="receipt-text">Thank you for supporting the artist. A confirmation email has been sent to <span id="receiptEmail"></span>.</p>
+            <button class="pay-btn" id="doneBtn">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script async src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+    <script>
+      const modal = document.getElementById('paymentModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalArtist = document.getElementById('modalArtist');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalPrice = document.getElementById('modalPrice');
+      const modalDesc = document.getElementById('modalDesc');
+      const detailStep = document.getElementById('detailStep');
+      const paymentStep = document.getElementById('paymentStep');
+      const paypalServiceTitle = document.getElementById('paypalServiceTitle');
+      const paypalServicePrice = document.getElementById('paypalServicePrice');
+      const receiptStep = document.getElementById('receiptStep');
+      const paymentService = document.getElementById('paymentService');
+      const paymentMethodNote = document.getElementById('paymentMethodNote');
+      const paymentMethodSummary = document.getElementById('paymentMethodSummary');
+      const paypalButtonContainer = document.getElementById('paypal-button-container');
+      const proceedPayment = document.getElementById('proceedPayment');
+      const receiptEmail = document.getElementById('receiptEmail');
+      const doneBtn = document.getElementById('doneBtn');
+      const closeButtons = modal.querySelectorAll('.close-btn, .cancel-btn');
+      let currentPayPalAmount = '0';
+      let currentPaymentSupport = { paypal: true, venmo: false };
+
+      function showStep(step) {
+        detailStep.style.display = step === 'details' ? 'block' : 'none';
+        paymentStep.style.display = step === 'payment' ? 'block' : 'none';
+        receiptStep.style.display = step === 'receipt' ? 'block' : 'none';
+        if (step === 'payment') updatePaymentStep();
+      }
+
+      function getNumericAmount(price) {
+        return price.replace(/[^0-9.]/g, '') || '0';
+      }
+
+      function getSelectedMethod() {
+        return paymentService.value;
+      }
+
+      function updatePaymentMethodNote() {
+        const selected = getSelectedMethod();
+        const supported = currentPaymentSupport[selected];
+        if (!supported) {
+          paymentMethodNote.textContent = 'This artist does not use that payment method.';
+          proceedPayment.disabled = true;
+          proceedPayment.textContent = 'Continue';
+          return;
+        }
+        proceedPayment.disabled = false;
+        if (selected === 'paypal') {
+          paymentMethodNote.textContent = 'PayPal is available for this artist.';
+          proceedPayment.textContent = 'Continue to PayPal';
+        } else if (selected === 'venmo') {
+          paymentMethodNote.textContent = 'Venmo is available. Use the artist’s Venmo handle to complete payment.';
+          proceedPayment.textContent = 'Continue to Venmo';
+        }
+      }
+
+      function updatePaymentStep() {
+        const selected = getSelectedMethod();
+        if (selected === 'paypal' && currentPaymentSupport.paypal) {
+          paymentMethodSummary.textContent = 'Complete your PayPal checkout below.';
+          paypalButtonContainer.style.display = 'block';
+        } else if (selected === 'venmo' && currentPaymentSupport.venmo) {
+          paymentMethodSummary.textContent = 'This artist accepts Venmo. Pay them directly using the artist’s Venmo handle.';
+          paypalButtonContainer.style.display = 'none';
+        } else {
+          paymentMethodSummary.textContent = 'This payment method is not supported for this artist.';
+          paypalButtonContainer.style.display = 'none';
+        }
+      }
+
+      function openModal(card) {
+        modalImage.src = card.dataset.image;
+        modalImage.alt = card.dataset.title + ' preview';
+        modalArtist.textContent = card.dataset.artist;
+        modalTitle.textContent = card.dataset.title;
+        modalPrice.textContent = card.dataset.price;
+        modalDesc.textContent = card.dataset.desc;
+        paypalServiceTitle.textContent = card.dataset.title;
+        paypalServicePrice.textContent = card.dataset.price;
+        currentPayPalAmount = getNumericAmount(card.dataset.price);
+        currentPaymentSupport = {
+          paypal: card.dataset.paypal === 'true',
+          venmo: card.dataset.venmo === 'true'
+        };
+        paymentService.value = currentPaymentSupport.paypal ? 'paypal' : currentPaymentSupport.venmo ? 'venmo' : 'paypal';
+        updatePaymentMethodNote();
+        showStep('details');
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function handlePaymentSuccess(details) {
+        receiptEmail.textContent = details.payer.email_address || 'your email';
+        showStep('receipt');
+      }
+
+      document.querySelectorAll('.commission-card').forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+      });
+
+      paymentService.addEventListener('change', updatePaymentMethodNote);
+      proceedPayment.addEventListener('click', () => showStep('payment'));
+
+      function initPayPalButtons() {
+        const container = document.getElementById('paypal-button-container');
+        if (!window.paypal || !container || container.dataset.paypalInit === 'true') return;
+        paypal.Buttons({
+          style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'checkout' },
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{ amount: { value: currentPayPalAmount } }]
+            });
+          },
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+              handlePaymentSuccess(details);
+            });
+          },
+          onError: function(err) {
+            console.error(err);
+            alert('There was an error with PayPal payment. Please try again.');
+          }
+        }).render('#paypal-button-container');
+        container.dataset.paypalInit = 'true';
+      }
+
+      function waitForPayPal() {
+        if (window.paypal) return initPayPalButtons();
+        const interval = setInterval(() => {
+          if (window.paypal) {
+            clearInterval(interval);
+            initPayPalButtons();
+          }
+        }, 150);
+        setTimeout(() => clearInterval(interval), 15000);
+      }
+
+      waitForPayPal();
+
+      closeButtons.forEach(button => button.addEventListener('click', closeModal));
+      doneBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+    </script>
+
+    <script src="auth.js?v=3"></script>
+
+      <footer class="site-footer">
+        <p>© SUNPOST — community artworks</p>
+      </footer>
+    </div>
+  </body>
+</html>

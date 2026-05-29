@@ -1,0 +1,283 @@
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+ERROR:    [Errno 98] Address already in use
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     Started reloader process [43186] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [43192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:49382 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51580 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51596 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51596 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/click/core.py", line 1524, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/click/core.py", line 1445, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/click/core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/click/core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 441, in main
+    run(
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 614, in run
+    sock = config.bind_socket()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 570, in bind_socket
+    sock = socket.socket(family=family)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 233, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+PermissionError: [Errno 1] Operation not permitted
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialization error: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("HTTPSConnection(host='oauth2.googleapis.com', port=443): Failed to resolve 'oauth2.googleapis.com' ([Errno -2] Name or service not known)"))
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/click/core.py", line 1524, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/click/core.py", line 1445, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/click/core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/click/core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 441, in main
+    run(
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 614, in run
+    sock = config.bind_socket()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/xian-flores/new-project/WEBSITE/Sunpost/backend/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 570, in bind_socket
+    sock = socket.socket(family=family)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 233, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+PermissionError: [Errno 1] Operation not permitted
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialization error: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("HTTPSConnection(host='oauth2.googleapis.com', port=443): Failed to resolve 'oauth2.googleapis.com' ([Errno -2] Name or service not known)"))
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [7950] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [8045]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:49864 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [8379] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [8394]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:56830 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [10105] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [10192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:37524 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38386 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58596 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58596 - "OPTIONS /public/signup HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58610 - "POST /public/signup HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58622 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58622 - "OPTIONS /public/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57236 - "POST /public/login HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [10192]
+INFO:     Started server process [12345]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [12846] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [12874]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:60142 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58152 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46002 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [20939] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [21033]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:49502 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55816 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55816 - "OPTIONS /public/signup HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55824 - "POST /public/signup HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [21033]
+INFO:     Started server process [22960]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [23230] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [23246]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:40644 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46116 - "POST /public/firebase-session HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [23246]
+INFO:     Started server process [25125]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:58386 - "GET /firebase-client-config HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25125]
+INFO:     Started server process [25649]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:46490 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [26559] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [26575]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:38576 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48712 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [4933] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     Started reloader process [5203] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [5230]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [5294]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:56262 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56264 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51024 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58946 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38004 - "OPTIONS /public/firebase-session HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38004 - "POST /public/firebase-session HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38004 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40080 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57790 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46578 - "POST /public/firebase-session HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46578 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50854 - "GET /firebase-client-config HTTP/1.1" 200 OK
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:60798 - "GET / HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/home/xian-flores/new-project/WEBSITE/Sunpost/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [4346] using StatReload
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     Started server process [4576]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Firebase initialized successfully with credentials from: /home/xian-flores/new-project/WEBSITE/CREDENTIALS/service-account.json
+Firestore initialized successfully
+Realtime Database initialized successfully at: https://finals-project-database-default-rtdb.asia-southeast1.firebasedatabase.app
+INFO:     127.0.0.1:40214 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37870 - "GET /firebase-client-config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37880 - "GET /diagnostics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37894 - "POST /public/login HTTP/1.1" 400 Bad Request

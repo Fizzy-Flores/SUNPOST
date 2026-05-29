@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SUNPOST — Commissions</title>
+    <link rel="stylesheet" href="homepagestyle.css" />
+    <link rel="stylesheet" href="CommissionStyle.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="brand"><img src="IMAGE/SUN ICON.PNG" alt="SunPOST logo" class="brand-logo"><a href="Homepage.html">SunPOST</a></div>
+          <nav class="tabs">
+            <a href="Homepage.html" class="tab">Home</a>
+            <a href="Commission.html" class="tab active">Commissions</a>
+            <a href="Shops.html" class="tab">Shop</a>
+          </nav>
+          <div class="search-user">
+            <label class="search">
+              <input type="search" placeholder="Search artists, services..." />
+              <button type="button" class="search-btn" aria-label="Search">🔍</button>
+            </label>
+            <div class="user-icon-container">
+              <button type="button" class="profile-button" aria-label="Profile menu">
+                <img src="IMAGE/PFP PLACEHOLDER.png" alt="you" />
+              </button>
+              <div class="profile-dropdown">
+                <ul class="profile-dropdown-menu">
+                  <li><a href="Account.html"><span class="dropdown-icon">👤</span> My Profile</a></li>
+                  <li><a href="#logout" id="logoutLink"><span class="dropdown-icon">🚪</span> Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <h2 style="margin:12px 0 18px;color:var(--panel)">Commissions</h2>
+        <p style="margin-bottom:18px;color:#5b2b18">Browse active commission slots and artist services.</p>
+
+        <section class="shop-categories">
+          <div class="category-grid">
+            <a class="category-card" href="CharacterDesigns.html">Character Designs</a>
+            <a class="category-card" href="3DMakers.html">3D Makers</a>
+            <a class="category-card" href="Educational.html">Educational</a>
+            <a class="category-card" href="Music.html">Music</a>
+            <a class="category-card" href="Writing.html">Writing</a>
+            <a class="category-card" href="Emotes.html">Emotes</a>
+            <a class="category-card" href="Animation.html">Animation</a>
+            <a class="category-card" href="VoiceActing.html">Voice Acting</a>
+          </div>
+
+          <div class="shop-tabs">
+            <button class="tab" data-comm-tab="Available">Available</button>
+            <button class="tab" data-comm-tab="Quick Slots">Quick Slots</button>
+            <button class="tab" data-comm-tab="Price Range">Price Range</button>
+            <button class="tab" data-comm-tab="Styles">Styles</button>
+          </div>
+        </section>
+
+        <section class="shop-list">
+          <div class="mentions-grid commissions-grid">
+            <article class="mention commission-card" data-image="IMAGE/comm1.jpg" data-artist="Artist One" data-price="$40" data-desc="A detailed portrait with soft lighting.">
+              <img src="IMAGE/comm1.jpg" alt="commission 1" />
+              <p class="commission-title">Artist One — Portrait</p>
+              <p class="commission-desc">Price: $40 · DM to request</p>
+            </article>
+            <article class="mention commission-card" data-image="IMAGE/comm2.jpg" data-artist="Artist Two" data-price="$10" data-desc="Clean icons with sharp linework.">
+              <img src="IMAGE/comm2.jpg" alt="commission 2" />
+              <p class="commission-title">Artist Two — Icon</p>
+              <p class="commission-desc">Price: $10 · Quick turnaround</p>
+            </article>
+            <article class="mention commission-card" data-image="IMAGE/comm3.jpg" data-artist="Artist Three" data-price="$75" data-desc="Full scene illustrations with backgrounds.">
+              <img src="IMAGE/comm3.jpg" alt="commission 3" />
+              <p class="commission-title">Artist Three — Full Scene</p>
+              <p class="commission-desc">Quote on request · Backgrounds</p>
+            </article>
+            <article class="mention commission-card" data-image="IMAGE/comm4.jpg" data-artist="Artist Four" data-price="$20" data-desc="Cute chibi characters with expressive poses.">
+              <img src="IMAGE/comm4.jpg" alt="commission 4" />
+              <p class="commission-title">Artist Four — Chibi</p>
+              <p class="commission-desc">Small chibis · Price varies</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- Reuse homepage modal UI for commission checkout -->
+      <div class="modal-overlay" id="paymentModal" aria-hidden="true">
+        <div class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+          <button class="close-btn" aria-label="Close payment popup">×</button>
+          <div class="modal-top">
+<div class="modal-image"><img src="IMAGE/comm1.jpg" alt="Commission preview" id="modalImage" /></div>
+            <div class="modal-info">
+              <p class="modal-artist" id="modalArtist">Artist</p>
+              <h2 class="modal-title" id="modalTitle">Commission Title</h2>
+              <p class="modal-description" id="modalDesc">Commission details appear here when an artist service is selected.</p>
+              <p class="modal-price" id="modalPrice">$0</p>
+              <div class="payment-method-row">
+                <label for="paymentService">Choose payment service</label>
+                <select id="paymentService" class="payment-select">
+                  <option value="paypal">PayPal</option>
+                  <option value="venmo">Venmo</option>
+                </select>
+                <div id="paymentMethodNote" class="payment-method-note"></div>
+              </div>
+            </div>
+          </div>
+          <div class="payment-step detail-step" id="detailStep">
+            <div class="modal-actions detail-actions">
+              <button class="cancel-btn proceed-btn" id="proceedPayment" type="button">Continue</button>
+              <button class="cancel-btn" type="button">Cancel</button>
+            </div>
+          </div>
+          <div class="payment-step payment-step--paypal" id="paymentStep">
+            <div class="payment-summary">
+              <p>Pay for: <strong id="paypalServiceTitle">Commission</strong></p>
+              <p>Amount: <strong id="paypalServicePrice">$0</strong></p>
+            </div>
+            <div id="paymentMethodSummary" class="payment-method-summary"></div>
+            <div id="paypal-button-container"></div>
+            <div class="modal-actions">
+              <button style="align-self:right" class="cancel-btn" type="button">Cancel</button>
+            </div>
+          </div>
+
+          <div class="payment-step receipt-step" id="receiptStep">
+            <div class="receipt-note">Payment successful!</div>
+            <p class="receipt-text">Thank you for supporting the artist. A confirmation email has been sent to <span id="receiptEmail"></span>.</p>
+            <button class="pay-btn" id="doneBtn">Done</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-overlay" id="commissionTabModal" aria-hidden="true">
+        <div class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="commissionTabModalTitle">
+          <button class="close-btn" aria-label="Close commission tab popup">×</button>
+          <div class="modal-top">
+            <div class="modal-info">
+              <h2 class="modal-title" id="commissionTabModalTitle">Commission details</h2>
+              <p class="modal-description" id="commissionTabModalIntro">Select a commission tab to learn more about artist availability, pricing, and styles.</p>
+            </div>
+          </div>
+          <div id="commissionTabModalContent" class="payment-step" style="display:block;margin-top:6px"></div>
+          <div class="tab-modal-note" id="commissionTabModalNote" style="margin-top:12px;color:#ffd87d"></div>
+          <div class="modal-actions" style="margin-top:16px">
+            <button class="cancel-btn" id="commissionTabModalClose" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+    <script>
+      const modal = document.getElementById('paymentModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalArtist = document.getElementById('modalArtist');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalPrice = document.getElementById('modalPrice');
+      const modalDesc = document.getElementById('modalDesc');
+      const detailStep = document.getElementById('detailStep');
+      const paymentStep = document.getElementById('paymentStep');
+      const paypalServiceTitle = document.getElementById('paypalServiceTitle');
+      const paypalServicePrice = document.getElementById('paypalServicePrice');
+      const receiptStep = document.getElementById('receiptStep');
+      const paymentService = document.getElementById('paymentService');
+      const paymentMethodNote = document.getElementById('paymentMethodNote');
+      const paymentMethodSummary = document.getElementById('paymentMethodSummary');
+      const paypalButtonContainer = document.getElementById('paypal-button-container');
+      const proceedPayment = document.getElementById('proceedPayment');
+      const receiptEmail = document.getElementById('receiptEmail');
+      const doneBtn = document.getElementById('doneBtn');
+      const closeButtons = modal.querySelectorAll('.close-btn, .cancel-btn');
+      let currentPayPalAmount = '0';
+      let currentPaymentSupport = { paypal: true, venmo: false };
+
+      function showStep(step) {
+        detailStep.style.display = step === 'details' ? 'block' : 'none';
+        paymentStep.style.display = step === 'payment' ? 'block' : 'none';
+        receiptStep.style.display = step === 'receipt' ? 'block' : 'none';
+        if (step === 'payment') updatePaymentStep();
+      }
+
+      function getNumericAmount(price) {
+        return price.replace(/[^0-9.]/g, '') || '0';
+      }
+
+      function getSelectedMethod() {
+        return paymentService.value;
+      }
+
+      function updatePaymentMethodNote() {
+        const selected = getSelectedMethod();
+        const supported = currentPaymentSupport[selected];
+        if (!supported) {
+          paymentMethodNote.textContent = 'This artist does not use that payment method.';
+          proceedPayment.disabled = true;
+          proceedPayment.textContent = 'Continue';
+          return;
+        }
+        proceedPayment.disabled = false;
+        if (selected === 'paypal') {
+          paymentMethodNote.textContent = 'PayPal is available for this artist.';
+          proceedPayment.textContent = 'Continue to PayPal';
+        } else if (selected === 'venmo') {
+          paymentMethodNote.textContent = 'Venmo is available. Use the artist’s Venmo handle to complete payment.';
+          proceedPayment.textContent = 'Continue to Venmo';
+        }
+      }
+
+      function updatePaymentStep() {
+        const selected = getSelectedMethod();
+        if (selected === 'paypal' && currentPaymentSupport.paypal) {
+          paymentMethodSummary.textContent = 'Complete your PayPal checkout below.';
+          paypalButtonContainer.style.display = 'block';
+        } else if (selected === 'venmo' && currentPaymentSupport.venmo) {
+          paymentMethodSummary.textContent = 'This artist accepts Venmo. Pay them directly using the artist’s Venmo handle.';
+          paypalButtonContainer.style.display = 'none';
+        } else {
+          paymentMethodSummary.textContent = 'This payment method is not supported for this artist.';
+          paypalButtonContainer.style.display = 'none';
+        }
+      }
+
+      function openModal(card) {
+        modalImage.src = card.dataset.image;
+        modalImage.alt = card.dataset.title + ' preview';
+        modalArtist.textContent = card.dataset.artist;
+        modalTitle.textContent = card.dataset.title;
+        modalPrice.textContent = card.dataset.price;
+        modalDesc.textContent = card.dataset.desc;
+        paypalServiceTitle.textContent = card.dataset.title;
+        paypalServicePrice.textContent = card.dataset.price;
+        currentPayPalAmount = getNumericAmount(card.dataset.price);
+        currentPaymentSupport = {
+          paypal: card.dataset.paypal === 'true',
+          venmo: card.dataset.venmo === 'true'
+        };
+        paymentService.value = currentPaymentSupport.paypal ? 'paypal' : currentPaymentSupport.venmo ? 'venmo' : 'paypal';
+        updatePaymentMethodNote();
+        showStep('details');
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function handlePaymentSuccess(details) {
+        receiptEmail.textContent = details.payer.email_address || 'your email';
+        showStep('receipt');
+      }
+
+      function buildCommissionTabContent(tabName) {
+        if (tabName === 'Available Slots') {
+          return `<ul><li><strong>Open slots:</strong> Artists currently accepting new commissions.</li><li><strong>Turnaround:</strong> Expect 1–2 weeks for a full finished piece.</li><li><strong>Good for:</strong> custom portraits, story scenes, and merchandise-ready art.</li></ul>`;
+        }
+        if (tabName === 'Fast Booking') {
+          return `<ul><li><strong>Quick request slots:</strong> Fast-turnaround art from artists with open availability.</li><li><strong>Best when:</strong> you need art on a tighter schedule.</li><li><strong>Note:</strong> Fast booking may have a slightly higher fee.</li></ul>`;
+        }
+        if (tabName === 'Price Range') {
+          return `<ul><li><strong>Budget-friendly:</strong> lower-price slots for simple commissions.</li><li><strong>Mid range:</strong> balanced detail and delivery time.</li><li><strong>Premium:</strong> highly polished work with extra revisions.</li></ul>`;
+        }
+        if (tabName === 'Art Styles') {
+          return `<ul><li><strong>Style preview:</strong> see which artists specialize in line art, painterly, chibi, or realistic looks.</li><li><strong>Best fit:</strong> choose a style that matches your commission idea.</li><li><strong>Tip:</strong> describe your preferred style clearly when you request.</li></ul>`;
+        }
+        return '<p>No commission tab info is available.</p>';
+      }
+
+      const commissionTabModal = document.getElementById('commissionTabModal');
+      const commissionTabModalTitle = document.getElementById('commissionTabModalTitle');
+      const commissionTabModalIntro = document.getElementById('commissionTabModalIntro');
+      const commissionTabModalContent = document.getElementById('commissionTabModalContent');
+      const commissionTabModalNote = document.getElementById('commissionTabModalNote');
+      const commissionTabCloseButtons = commissionTabModal.querySelectorAll('.close-btn, .cancel-btn');
+      const commissionTabButtons = document.querySelectorAll('.shop-tabs .tab');
+      const commissionTabModalClose = document.getElementById('commissionTabModalClose');
+      const commissionTabInfo = {
+        'Available Slots': {
+          title: 'Open Commission Slots',
+          intro: 'Browse artists who are currently accepting new custom work.',
+          note: 'Availability may change, so book soon if you find a slot you like.'
+        },
+        'Fast Booking': {
+          title: 'Fast Booking Options',
+          intro: 'Perfect for quick requests and shorter deadlines.',
+          note: 'Fast booking slots are best when you need art completed quickly.'
+        },
+        'Price Range': {
+          title: 'Commission Price Range',
+          intro: 'Choose the right budget for your level of detail and turnaround.',
+          note: 'Prices vary by artist and complexity; ask for a quote if you need exact pricing.'
+        },
+        'Art Styles': {
+          title: 'Commission Art Styles',
+          intro: 'Find artists by their specialty styles and visual approach.',
+          note: 'A clear style choice helps artists deliver exactly what you want.'
+        }
+      };
+
+      function openCommissionTabModal(tabName) {
+        const info = commissionTabInfo[tabName] || commissionTabInfo['Available Slots'];
+        commissionTabModalTitle.textContent = info.title;
+        commissionTabModalIntro.textContent = info.intro;
+        commissionTabModalContent.innerHTML = buildCommissionTabContent(tabName);
+        commissionTabModalNote.textContent = info.note;
+        commissionTabModal.classList.add('open');
+        commissionTabModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCommissionTabModal() {
+        commissionTabModal.classList.remove('open');
+        commissionTabModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      commissionTabButtons.forEach(button => {
+        button.addEventListener('click', () => openCommissionTabModal(button.dataset.commTab || button.textContent.trim()));
+      });
+      commissionTabCloseButtons.forEach(b => b.addEventListener('click', closeCommissionTabModal));
+      commissionTabModalClose.addEventListener('click', closeCommissionTabModal);
+      commissionTabModal.addEventListener('click', (event) => { if (event.target === commissionTabModal) closeCommissionTabModal(); });
+
+      document.querySelectorAll('.commission-card').forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+      });
+
+      paymentService.addEventListener('change', updatePaymentMethodNote);
+      proceedPayment.addEventListener('click', () => showStep('payment'));
+
+      if (window.paypal) {
+        paypal.Buttons({
+          style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'checkout' },
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{ amount: { value: currentPayPalAmount } }]
+            });
+          },
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+              handlePaymentSuccess(details);
+            });
+          },
+          onError: function(err) {
+            console.error(err);
+            alert('There was an error with PayPal payment. Please try again.');
+          }
+        }).render('#paypal-button-container');
+      }
+
+      closeButtons.forEach(button => button.addEventListener('click', closeModal));
+      doneBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+    </script>
+    <script src="profile-dropdown.js"></script>
+
+      <footer class="site-footer">
+        <p>© SUNPOST — community artworks</p>
+      </footer>
+    </div>
+  </body>
+</html>

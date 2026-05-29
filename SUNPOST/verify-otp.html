@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SunPOST - Verify Code</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Ensure root-relative images so they always resolve (server is started from Sunpost-frontend folder). -->
+    <base href="." />
+    <style>
+      :root{color-scheme:dark;}
+      body{font-family:'Poppins',sans-serif;}
+      .page{min-height:100vh;display:grid;place-items:center;padding:2rem;}
+      .card{width:min(560px,100%);background:rgba(27,12,8,0.96);border:1px solid rgba(255,255,255,0.1);border-radius:24px;box-shadow:0 28px 70px rgba(0,0,0,0.18);padding:2rem;}
+      h1{font-size:1.6rem;margin-bottom:0.75rem;}
+      p{color:rgba(248,228,193,0.9);line-height:1.7;margin-bottom:1.25rem;}
+      .input-group{display:grid;gap:0.5rem;margin-bottom:1rem;}
+      label{color:rgba(242,217,177,0.95);}
+      input{padding:0.9rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.06);color:#fff;outline:none;}
+      .submit-btn{display:inline-flex;align-items:center;justify-content:center;padding:0.95rem 1.35rem;border-radius:999px;border:none;cursor:pointer;font-weight:800;background:linear-gradient(135deg,#f7c58a,#d9773f);color:#1f0c04;}
+      .form-message{min-height:1.2rem;margin-top:0.8rem;}
+      .error{color:#ffb3b3;}
+      .success{color:#c6ffd6;}
+      .hidden{display:none;}
+      .helper{font-size:0.92rem;color:rgba(248,228,193,0.78);}
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="card">
+        <h1>Verify your Gmail</h1>
+        <p>We sent a verification code to your Gmail. Enter it below to continue.</p>
+
+        <form id="otp-form" onsubmit="return false;">
+          <div class="input-group">
+            <label for="otp">Verification code</label>
+            <input id="otp" name="otp" inputmode="numeric" autocomplete="one-time-code" placeholder="123456" required />
+            <div class="helper">Codes expire in a few minutes.</div>
+          </div>
+
+          <button type="button" id="verify-otp-button" class="submit-btn">Verify & Continue</button>
+          <div id="otp-message" class="form-message" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+
+    <script src="site-config.js?v=3" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js" defer></script>
+    <script src="firebase-config.js?v=3" defer></script>
+    <script src="auth.js?v=3" defer></script>
+    <script>
+      // auth.js attaches handlers; we only provide a small bootstrap for OTP page.
+      window.__SUNPOST_OTP_PAGE__ = true;
+    </script>
+  </body>
+</html>
+

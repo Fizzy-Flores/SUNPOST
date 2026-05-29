@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SUNPOST — Account</title>
+    <link rel="stylesheet" href="homepagestyle.css" />
+    <link rel="stylesheet" href="Accountstyle.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="brand"><img src="IMAGE/SUN ICON.PNG" alt="SunPOST logo" class="brand-logo"><a href="Homepage.html">SunPOST</a></div>
+          <nav class="tabs">
+            <a href="Homepage.html" class="tab">Home</a>
+            <a href="Commission.html" class="tab">Commissions</a>
+            <a href="Shops.html" class="tab">Shop</a>
+          </nav>
+          <div class="search-user">
+            <label class="search">
+              <input type="search" placeholder="Search artists, tags..." />
+              <button type="button" class="search-btn" aria-label="Search">🔍</button>
+            </label>
+            <div class="account-icons">
+              <button type="button" id="openAccountSettings" class="settings-icon" aria-label="Account settings">⚙</button>
+              <div class="user-icon-container">
+                <button type="button" class="profile-button" aria-label="Profile menu">
+                  <img src="IMAGE/PFP PLACEHOLDER.png" alt="your profile" />
+                </button>
+                <div class="profile-dropdown">
+                  <ul class="profile-dropdown-menu">
+                    <li><a href="Account.html"><span class="dropdown-icon">👤</span> My Profile</a></li>
+                    <li><a href="#logout" id="logoutLink"><span class="dropdown-icon">🚪</span> Logout</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content account-page">
+        <section class="account-hero">
+          <div class="account-banner" id="accountBanner">
+            <div class="banner-toolbar">
+              <button type="button" id="openSettingsBadge" class="settings-badge" aria-label="Account settings"></button>
+              <button type="button" id="openUploadModal" class="upload-btn" aria-label="Open upload options">＋ Upload</button>
+            </div>
+          </div>
+          <div class="banner-profile">
+            <div class="banner-stat">
+              <span>180</span>
+              <p>Followers</p>
+            </div>
+            <div class="profile-circle"><img src="IMAGE/PFP PLACEHOLDER.png" alt="profile" /></div>
+            <div class="banner-stat">
+              <span>92</span>
+              <p>Following</p>
+            </div>
+          </div>
+          <div class="account-summary">
+            <div class="account-meta">
+              <p class="account-name">@yourartistname</p>
+              <div class="social-links">
+                <a href="#" id="twitterLink" aria-label="X"><img src="IMAGE/X.png" alt="X" style="width:32px;height:32px;vertical-align:middle;border-radius:8px;background:#000;" /></a>
+                <a href="#" id="tiktokLink" aria-label="TikTok"><img src="IMAGE/TikTok.png" alt="TikTok" style="width:50px;height:32px;vertical-align:middle;border-radius:8px;background:#000;" /></a>
+                <a href="#" id="youtubeLink" aria-label="YouTube"><img src="IMAGE/YouTube.png" alt="YouTube" style="width:32px;height:32px;vertical-align:middle;border-radius:8px;background:#fff;" /></a>
+              </div>
+              <p class="account-bio">A storyteller through art. Open for commissions, collaborations, and new creative projects. Follow for updates and new drops.</p>
+              <p class="upload-status" id="uploadStatus">Choose a post type to share something new.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="account-tabs">
+          <button class="account-tab active" data-tab="portfolio">Portfolio</button>
+          <button class="account-tab" data-tab="commissions">Commissions</button>
+          <button class="account-tab" data-tab="honorables">Honorables</button>
+        </section>
+
+        <section class="account-content">
+          <div class="account-panel active" data-panel="portfolio">
+            <h3>Personal Artworks</h3>
+            <div class="portfolio-grid" id="portfolioGrid">
+              <article class="art-card" data-art-id="seed-art1" data-title="Dreamscape character study" data-type="personal"><img src="IMAGE/art1.jpg" alt="Dreamscape character study" /><p>Dreamscape character study</p></article>
+              <article class="art-card" data-art-id="seed-art2" data-title="Dark fantasy portrait" data-type="personal"><img src="IMAGE/art2.jpg" alt="Dark fantasy portrait" /><p>Dark fantasy portrait</p></article>
+              <article class="art-card" data-art-id="seed-art3" data-title="Illustrated city scene" data-type="personal"><img src="IMAGE/art3.jpg" alt="Illustrated city scene" /><p>Illustrated city scene</p></article>
+              <article class="art-card" data-art-id="seed-art4" data-title="Soft color concept" data-type="personal"><img src="IMAGE/art4.jpg" alt="Soft color concept" /><p>Soft color concept</p></article>
+            </div>
+          </div>
+
+          <div class="account-panel" data-panel="commissions">
+            <h3>Commission Services</h3>
+            <div class="commission-list" id="commissionList">
+              <div id="userCommissionList"></div>
+              <article class="commission-item"><h4>Portrait commission</h4><p>Delivered a custom character portrait with detailed lighting.</p></article>
+              <article class="commission-item"><h4>Scene illustration</h4><p>Completed a full-scene background piece for a fantasy story.</p></article>
+              <article class="commission-item"><h4>Icon set</h4><p>Created a set of branded icons for a creative studio.</p></article>
+            </div>
+          </div>
+
+          <div class="account-panel" data-panel="honorables">
+            <h3>Honorables</h3>
+            <div class="honorables-list">
+              <article class="honorable-item"><p><strong>Artist A</strong> ↔ <strong>Artist B</strong></p><span>Mutual follow</span></article>
+              <article class="honorable-item"><p><strong>Artist C</strong> ↔ <strong>Artist D</strong></p><span>Mutual follow</span></article>
+              <article class="honorable-item"><p><strong>Artist E</strong> ↔ <strong>Artist F</strong></p><span>Mutual follow</span></article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div class="modal-overlay" id="settingsModal" aria-hidden="true">
+        <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
+          <button class="close-btn" id="closeSettingsModal" aria-label="Close settings popup">×</button>
+          <h2 id="settingsModalTitle">Customize your page</h2>
+          <p>Update your display name, bio, profile image, and socials.</p>
+          <form id="settingsForm" class="settings-form">
+            <label>Display name
+              <input type="text" id="accountNameInput" placeholder="@yourartistname" />
+            </label>
+            <label>Profile bio
+              <textarea id="accountBioInput" rows="4" placeholder="A storyteller through art..."></textarea>
+            </label>
+            <label>Profile image URL
+              <input type="text" id="accountImageInput" placeholder="IMAGE/PFP PLACEHOLDER.png or https://example.com/image.jpg" />
+            </label>
+            <label>Banner image URL
+              <input type="text" id="bannerImageInput" placeholder="banner.jpg or https://example.com/banner.jpg" />
+            </label>
+            <label>Twitter handle
+              <input type="text" id="twitterInput" placeholder="twitter.com/username" />
+            </label>
+            <label>TikTok handle
+              <input type="text" id="tiktokInput" placeholder="tiktok.com/@username" />
+            </label>
+            <label>YouTube channel
+              <input type="text" id="youtubeInput" placeholder="youtube.com/channel/ID" />
+            </label>
+            <button type="button" class="save-btn" id="saveSettingsBtn">Save changes</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-overlay" id="uploadModal" aria-hidden="true">
+        <div class="settings-modal upload-modal" role="dialog" aria-modal="true" aria-labelledby="uploadModalTitle">
+          <button class="close-btn" id="closeUploadModal" aria-label="Close upload popup">×</button>
+          <h2 id="uploadModalTitle">What would you like to post?</h2>
+          <p>Pick whether you want to share a personal art piece or offer a commission service.</p>
+          <div class="upload-choice-grid">
+            <button type="button" class="upload-choice-card" data-post-type="personal">
+              <span class="upload-choice-title">Personal art piece</span>
+              <span class="upload-choice-copy">Share a finished artwork or sketch from your portfolio.</span>
+            </button>
+            <button type="button" class="upload-choice-card" data-post-type="commission">
+              <span class="upload-choice-title">Commission service</span>
+              <span class="upload-choice-copy">Promote your commission availability and invite inquiries.</span>
+            </button>
+          </div>
+          <p class="upload-choice-note">Choosing an option will open your folder picker so you can select the art file to post.</p>
+        </div>
+      </div>
+
+      <input type="file" id="uploadFileInput" accept="image/*" class="upload-hidden-input" />
+
+      <div class="modal-overlay" id="viewerModal" aria-hidden="true">
+        <div class="art-viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
+          <button class="close-btn" id="closeViewerModal" aria-label="Close artwork viewer">×</button>
+          <div class="art-viewer-layout">
+            <div class="art-viewer-image-wrap">
+              <img id="viewerImage" alt="Selected artwork" />
+            </div>
+            <div class="art-viewer-meta">
+              <p id="viewerTitle" class="viewer-title"></p>
+              <p id="viewerType" class="viewer-type"></p>
+              <div class="reaction-row">
+                <button type="button" id="viewerLikeBtn" class="reaction-btn">👍 <span id="viewerLikeCount">0</span></button>
+                <button type="button" id="viewerDislikeBtn" class="reaction-btn">👎 <span id="viewerDislikeCount">0</span></button>
+              </div>
+              <div class="comment-box">
+                <label for="viewerCommentInput" class="comment-label">Add a comment</label>
+                <textarea id="viewerCommentInput" rows="4" placeholder="What do you think about this artwork?"></textarea>
+                <button type="button" id="viewerCommentBtn" class="save-btn">Post comment</button>
+              </div>
+              <div class="comment-list" id="viewerComments"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll('.account-tab');
+      const panels = document.querySelectorAll('.account-panel');
+      const openAccountSettings = document.getElementById('openAccountSettings');
+      const openSettingsBadge = document.getElementById('openSettingsBadge');
+      const settingsModal = document.getElementById('settingsModal');
+      const closeSettingsModal = document.getElementById('closeSettingsModal');
+      const saveSettingsBtn = document.getElementById('saveSettingsBtn');
+      const openUploadModal = document.getElementById('openUploadModal');
+      const uploadModal = document.getElementById('uploadModal');
+      const closeUploadModal = document.getElementById('closeUploadModal');
+      const uploadChoiceButtons = document.querySelectorAll('.upload-choice-card');
+      const uploadFileInput = document.getElementById('uploadFileInput');
+      const uploadStatus = document.getElementById('uploadStatus');
+      const portfolioGrid = document.getElementById('portfolioGrid');
+      const commissionList = document.getElementById('commissionList');
+      const userCommissionList = document.getElementById('userCommissionList');
+      const viewerModal = document.getElementById('viewerModal');
+      const closeViewerModal = document.getElementById('closeViewerModal');
+      const viewerImage = document.getElementById('viewerImage');
+      const viewerTitle = document.getElementById('viewerTitle');
+      const viewerType = document.getElementById('viewerType');
+      const viewerLikeBtn = document.getElementById('viewerLikeBtn');
+      const viewerDislikeBtn = document.getElementById('viewerDislikeBtn');
+      const viewerLikeCount = document.getElementById('viewerLikeCount');
+      const viewerDislikeCount = document.getElementById('viewerDislikeCount');
+      const viewerCommentInput = document.getElementById('viewerCommentInput');
+      const viewerCommentBtn = document.getElementById('viewerCommentBtn');
+      const viewerComments = document.getElementById('viewerComments');
+      const accountNameText = document.querySelector('.account-name');
+      const accountBioText = document.querySelector('.account-bio');
+      const profileImage = document.querySelector('.profile-circle img');
+      const accountBanner = document.getElementById('accountBanner');
+      const twitterLink = document.getElementById('twitterLink');
+      const tiktokLink = document.getElementById('tiktokLink');
+      const youtubeLink = document.getElementById('youtubeLink');
+      const accountNameInput = document.getElementById('accountNameInput');
+      const accountBioInput = document.getElementById('accountBioInput');
+      const accountImageInput = document.getElementById('accountImageInput');
+      const bannerImageInput = document.getElementById('bannerImageInput');
+      const twitterInput = document.getElementById('twitterInput');
+      const tiktokInput = document.getElementById('tiktokInput');
+      const youtubeInput = document.getElementById('youtubeInput');
+      const storageKey = 'sunpost-account-artworks-v1';
+      const voteStorageKey = 'sunpost-account-art-votes-v1';
+      let currentUploadType = 'personal';
+      let currentViewerId = null;
+
+      const seedArtworks = [
+        { id: 'seed-art1', title: 'Dreamscape character study', image: 'IMAGE/art1.jpg', type: 'personal' },
+        { id: 'seed-art2', title: 'Dark fantasy portrait', image: 'IMAGE/art2.jpg', type: 'personal' },
+        { id: 'seed-art3', title: 'Illustrated city scene', image: 'IMAGE/art3.jpg', type: 'personal' },
+        { id: 'seed-art4', title: 'Soft color concept', image: 'IMAGE/art4.jpg', type: 'personal' }
+      ];
+
+      const seedReactionState = {
+        'seed-art1': { likes: 18, dislikes: 2 },
+        'seed-art2': { likes: 24, dislikes: 1 },
+        'seed-art3': { likes: 12, dislikes: 0 },
+        'seed-art4': { likes: 16, dislikes: 1 }
+      };
+
+      const seedCommentState = {
+        'seed-art1': [
+          { author: 'Viewer', text: 'The lighting on the cloak is stunning.', createdAt: 'Just now' }
+        ],
+        'seed-art2': [
+          { author: 'Viewer', text: 'The atmosphere feels cinematic.', createdAt: '2 hours ago' }
+        ],
+        'seed-art3': [
+          { author: 'Viewer', text: 'Love the balance of color and detail.', createdAt: '1 day ago' }
+        ],
+        'seed-art4': [
+          { author: 'Viewer', text: 'This has such a soft, dreamy feel.', createdAt: '3 days ago' }
+        ]
+      };
+
+      const state = loadArtworkState();
+      const voteState = loadVoteState();
+
+      function normalizeSocialLink(value, baseUrl) {
+        if (!value || value.trim() === '') return '#';
+        if (value.startsWith('http://') || value.startsWith('https://')) return value;
+        return baseUrl + value.replace(/^@/, '').trim();
+      }
+
+      function loadArtworkState() {
+        const savedState = localStorage.getItem(storageKey);
+
+        if (!savedState) {
+          return {
+            artworks: [...seedArtworks],
+            reactions: { ...seedReactionState },
+            comments: { ...seedCommentState }
+          };
+        }
+
+        try {
+          const parsed = JSON.parse(savedState);
+          return {
+            artworks: Array.isArray(parsed.artworks) && parsed.artworks.length ? parsed.artworks : [...seedArtworks],
+            reactions: { ...seedReactionState, ...(parsed.reactions || {}) },
+            comments: { ...seedCommentState, ...(parsed.comments || {}) }
+          };
+        } catch (error) {
+          return {
+            artworks: [...seedArtworks],
+            reactions: { ...seedReactionState },
+            comments: { ...seedCommentState }
+          };
+        }
+      }
+
+      function persistArtworkState() {
+        localStorage.setItem(storageKey, JSON.stringify({
+          artworks: state.artworks,
+          reactions: state.reactions,
+          comments: state.comments
+        }));
+      }
+
+      function loadVoteState() {
+        const savedVotes = localStorage.getItem(voteStorageKey);
+
+        if (!savedVotes) {
+          return {};
+        }
+
+        try {
+          const parsed = JSON.parse(savedVotes);
+          return parsed && typeof parsed === 'object' ? parsed : {};
+        } catch (error) {
+          return {};
+        }
+      }
+
+      function persistVoteState() {
+        localStorage.setItem(voteStorageKey, JSON.stringify(voteState));
+      }
+
+      function fileToDataUrl(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(reader.error);
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function createArtworkCard(artwork) {
+        const card = document.createElement('article');
+        card.className = 'art-card';
+        card.dataset.artId = artwork.id;
+        card.dataset.title = artwork.title;
+        card.dataset.type = artwork.type;
+        card.innerHTML = `<img src="${artwork.image}" alt="${artwork.title}" /><p>${artwork.title}</p>`;
+        card.addEventListener('click', () => openViewer(artwork.id));
+        return card;
+      }
+
+      function createCommissionItem(artwork) {
+        const item = document.createElement('article');
+        item.className = 'commission-item';
+        item.dataset.artId = artwork.id;
+        item.innerHTML = `<h4>${artwork.title}</h4><p>Commission service • Posted from your account</p>`;
+        item.addEventListener('click', () => openViewer(artwork.id));
+        return item;
+      }
+
+      function renderPortfolio() {
+        portfolioGrid.innerHTML = '';
+        state.artworks
+          .filter((artwork) => artwork.type === 'personal')
+          .forEach((artwork) => {
+            portfolioGrid.appendChild(createArtworkCard(artwork));
+          });
+      }
+
+      function renderCommissionPosts() {
+        userCommissionList.innerHTML = '';
+
+        state.artworks
+          .filter((artwork) => artwork.type === 'commission')
+          .forEach((artwork) => {
+            userCommissionList.appendChild(createCommissionItem(artwork));
+          });
+      }
+
+      function openSettings() {
+        accountNameInput.value = accountNameText.textContent;
+        accountBioInput.value = accountBioText.textContent;
+        accountImageInput.value = profileImage.src;
+        bannerImageInput.value = accountBanner.style.backgroundImage.replace(/url\(['"]?|['"]?\)/g, '') || '';
+        twitterInput.value = twitterLink.href !== '#' ? twitterLink.href : '';
+        tiktokInput.value = tiktokLink.href !== '#' ? tiktokLink.href : '';
+        youtubeInput.value = youtubeLink.href !== '#' ? youtubeLink.href : '';
+        settingsModal.classList.add('open');
+        settingsModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSettings() {
+        settingsModal.classList.remove('open');
+        settingsModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function openUpload() {
+        uploadModal.classList.add('open');
+        uploadModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeUpload() {
+        uploadModal.classList.remove('open');
+        uploadModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function openViewer(artworkId) {
+        const artwork = state.artworks.find((item) => item.id === artworkId);
+
+        if (!artwork) {
+          return;
+        }
+
+        currentViewerId = artworkId;
+        viewerImage.src = artwork.image;
+        viewerImage.alt = artwork.title;
+        viewerTitle.textContent = artwork.title;
+        viewerType.textContent = artwork.type === 'commission' ? 'Commission service' : 'Personal art piece';
+
+        if (!state.reactions[artworkId]) {
+          state.reactions[artworkId] = { likes: 0, dislikes: 0 };
+        }
+
+        if (!state.comments[artworkId]) {
+          state.comments[artworkId] = [];
+        }
+
+        viewerLikeCount.textContent = state.reactions[artworkId].likes;
+        viewerDislikeCount.textContent = state.reactions[artworkId].dislikes;
+        updateReactionButtons();
+        renderComments();
+        viewerModal.classList.add('open');
+        viewerModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeViewer() {
+        viewerModal.classList.remove('open');
+        viewerModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function renderComments() {
+        const comments = state.comments[currentViewerId] || [];
+
+        if (!comments.length) {
+          viewerComments.innerHTML = '<p class="comment-empty">No comments yet. Be the first to leave one.</p>';
+          return;
+        }
+
+        viewerComments.innerHTML = comments.map((comment) => `
+          <article class="comment-item">
+            <p class="comment-author">${comment.author}</p>
+            <p class="comment-text">${comment.text}</p>
+            <span class="comment-date">${comment.createdAt}</span>
+          </article>
+        `).join('');
+      }
+
+      function updateReactionButtons() {
+        const voted = voteState[currentViewerId];
+
+        viewerLikeBtn.disabled = false;
+        viewerDislikeBtn.disabled = false;
+        viewerLikeBtn.classList.remove('is-disabled');
+        viewerDislikeBtn.classList.remove('is-disabled');
+
+        if (voted === 'like') {
+          viewerLikeBtn.setAttribute('aria-label', 'You liked this artwork. Click dislike to switch your vote');
+          viewerDislikeBtn.setAttribute('aria-label', 'Switch your vote to dislike');
+        } else if (voted === 'dislike') {
+          viewerLikeBtn.setAttribute('aria-label', 'Switch your vote to like');
+          viewerDislikeBtn.setAttribute('aria-label', 'You disliked this artwork. Click like to switch your vote');
+        } else {
+          viewerLikeBtn.setAttribute('aria-label', 'Like this artwork');
+          viewerDislikeBtn.setAttribute('aria-label', 'Dislike this artwork');
+        }
+      }
+
+      function castVote(voteType) {
+        if (!currentViewerId) {
+          return;
+        }
+
+        const currentVote = voteState[currentViewerId];
+
+        if (currentVote === voteType) {
+          return;
+        }
+
+        if (currentVote === 'like') {
+          state.reactions[currentViewerId].likes = Math.max(0, state.reactions[currentViewerId].likes - 1);
+        } else if (currentVote === 'dislike') {
+          state.reactions[currentViewerId].dislikes = Math.max(0, state.reactions[currentViewerId].dislikes - 1);
+        }
+
+        voteState[currentViewerId] = voteType;
+
+        if (voteType === 'like') {
+          state.reactions[currentViewerId].likes += 1;
+        } else {
+          state.reactions[currentViewerId].dislikes += 1;
+        }
+
+        persistVoteState();
+        persistArtworkState();
+        viewerLikeCount.textContent = state.reactions[currentViewerId].likes;
+        viewerDislikeCount.textContent = state.reactions[currentViewerId].dislikes;
+        updateReactionButtons();
+      }
+
+      async function uploadArtwork(file) {
+        if (!file) {
+          uploadStatus.textContent = `Choose a file from your folder to post your ${currentUploadType === 'commission' ? 'commission service' : 'personal art piece'}.`;
+          return;
+        }
+
+        const imageData = await fileToDataUrl(file);
+        const artwork = {
+          id: `uploaded-${Date.now()}`,
+          title: file.name.replace(/\.[^/.]+$/, ''),
+          image: imageData,
+          type: currentUploadType
+        };
+
+        state.artworks.unshift(artwork);
+        state.reactions[artwork.id] = { likes: 0, dislikes: 0 };
+        state.comments[artwork.id] = [];
+        persistArtworkState();
+        renderPortfolio();
+        renderCommissionPosts();
+        uploadStatus.textContent = `Uploaded ${artwork.title} as a ${artwork.type === 'commission' ? 'commission service' : 'personal art piece'}.`;
+        openViewer(artwork.id);
+      }
+
+      function saveSettings() {
+        if (accountNameInput.value.trim()) {
+          accountNameText.textContent = accountNameInput.value.trim();
+        }
+        if (accountBioInput.value.trim()) {
+          accountBioText.textContent = accountBioInput.value.trim();
+        }
+        if (accountImageInput.value.trim()) {
+          profileImage.src = accountImageInput.value.trim();
+        }
+        if (bannerImageInput.value.trim()) {
+          accountBanner.style.backgroundImage = `url('${bannerImageInput.value.trim()}')`;
+        }
+        twitterLink.href = normalizeSocialLink(twitterInput.value, 'https://twitter.com/');
+        tiktokLink.href = normalizeSocialLink(tiktokInput.value, 'https://www.tiktok.com/@');
+        youtubeLink.href = normalizeSocialLink(youtubeInput.value, 'https://www.youtube.com/');
+        closeSettings();
+      }
+
+      function selectUploadType(type) {
+        currentUploadType = type;
+        const labels = {
+          personal: 'Personal art piece',
+          commission: 'Commission service'
+        };
+
+        uploadStatus.textContent = `Ready to post: ${labels[type]} — choosing a file will upload it.`;
+        closeUpload();
+        uploadFileInput.click();
+      }
+
+      function addComment() {
+        const commentText = viewerCommentInput.value.trim();
+
+        if (!currentViewerId || !commentText) {
+          return;
+        }
+
+        state.comments[currentViewerId].unshift({
+          author: 'Viewer',
+          text: commentText,
+          createdAt: 'Just now'
+        });
+
+        persistArtworkState();
+        renderComments();
+        viewerCommentInput.value = '';
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          panels.forEach(panel => panel.classList.remove('active'));
+          tab.classList.add('active');
+          const selected = tab.dataset.tab;
+          document.querySelector(`.account-panel[data-panel="${selected}"]`).classList.add('active');
+        });
+      });
+
+      [openAccountSettings, openSettingsBadge].forEach(button => {
+        button.addEventListener('click', openSettings);
+      });
+
+      openUploadModal.addEventListener('click', openUpload);
+      closeSettingsModal.addEventListener('click', closeSettings);
+      closeUploadModal.addEventListener('click', closeUpload);
+      closeViewerModal.addEventListener('click', closeViewer);
+      settingsModal.addEventListener('click', (event) => {
+        if (event.target === settingsModal) closeSettings();
+      });
+      uploadModal.addEventListener('click', (event) => {
+        if (event.target === uploadModal) closeUpload();
+      });
+      viewerModal.addEventListener('click', (event) => {
+        if (event.target === viewerModal) closeViewer();
+      });
+      uploadChoiceButtons.forEach(button => {
+        button.addEventListener('click', () => selectUploadType(button.dataset.postType));
+      });
+      uploadFileInput.addEventListener('change', async (event) => {
+        const file = event.target.files[0];
+        await uploadArtwork(file);
+        event.target.value = '';
+      });
+      viewerLikeBtn.addEventListener('click', () => castVote('like'));
+      viewerDislikeBtn.addEventListener('click', () => castVote('dislike'));
+      viewerCommentBtn.addEventListener('click', addComment);
+      saveSettingsBtn.addEventListener('click', saveSettings);
+      renderPortfolio();
+      renderCommissionPosts();
+    </script>
+    <script src="profile-dropdown.js"></script>
+  </body>
+</html>
