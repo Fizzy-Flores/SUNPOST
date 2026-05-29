@@ -27,6 +27,27 @@ services:
       - key: FIREBASE_STORAGE_BUCKET
         scope: runtime
         sync: false
+      # Gmail OAuth / SMTP for OTP emails
+      - key: GMAIL_ADDRESS
+        scope: runtime
+        sync: false
+        value: "epicsanz5@gmail.com"
+      - key: GMAIL_CLIENT_ID
+        scope: runtime
+        sync: false
+        value: "203712415228-4funk5hbk75kcf5rh2bmbcolv2obb69p.apps.googleusercontent.com"
+      - key: GMAIL_CLIENT_SECRET
+        scope: runtime
+        sync: false
+        value: "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"
+      - key: GMAIL_REFRESH_TOKEN
+        scope: runtime
+        sync: false
+        value: "1//04Xa1rPW5g5K_CgYIARAAGAQSNwF-L9IrTdx5QWF07fys__du7XgYfjjcWdEsB175X2C_Q08xCJRvdlyT2PqIYvcBEzakhRu0ysA"
+      - key: GMAIL_SENDER
+        scope: runtime
+        sync: false
+        value: ""
       - key: PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION
         value: python
         scope: runtime
