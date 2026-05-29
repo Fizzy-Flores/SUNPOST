@@ -29,9 +29,15 @@ WEBSITE/Sunpost/backend/
 4. Configure the service:
    - **Name**: `sunpost-backend`
    - **Environment**: `Python 3`
+   - **Root Directory**: `WEBSITE/Sunpost/backend`
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
    - **Plan**: Free or Paid (Free tier has 15-min auto-sleep)
+
+   If you cannot set the root directory in the dashboard, change the build command to:
+   ```bash
+   cd WEBSITE/Sunpost/backend && pip install -r requirements.txt
+   ```
 
 ## Step 3: Set Environment Variables
 
