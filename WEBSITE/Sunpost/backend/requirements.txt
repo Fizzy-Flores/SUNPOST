@@ -8,6 +8,5 @@ google-auth==2.26.1
 google-auth-oauthlib==1.2.0
 google-auth-httplib2==0.2.0
 google-cloud-firestore==2.15.0
-gunicorn==20.1.0
 setuptools==82.0.1
 a2wsgi==1.10.10
