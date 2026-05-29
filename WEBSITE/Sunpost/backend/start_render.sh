@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 echo "Starting Sunpost backend startup diagnostics..."
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+echo "Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=$PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"
 echo "User: $(whoami)"
 echo "PWD: $(pwd)"
 echo "Python: $(python --version 2>&1)"

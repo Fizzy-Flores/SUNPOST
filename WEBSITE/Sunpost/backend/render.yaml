@@ -27,3 +27,9 @@ services:
       - key: FIREBASE_STORAGE_BUCKET
         scope: runtime
         sync: false
+      - key: PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION
+        value: python
+        scope: runtime
+      - key: PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION
+        value: python
+        scope: build
