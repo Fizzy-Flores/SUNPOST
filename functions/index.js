@@ -2,7 +2,25 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
 
-admin.initializeApp();
+const firebaseServiceAccountKey = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
+const firebaseDatabaseURL = process.env.FIREBASE_DATABASE_URL;
+
+if (firebaseServiceAccountKey) {
+  try {
+    const serviceAccount = JSON.parse(firebaseServiceAccountKey);
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      databaseURL: firebaseDatabaseURL,
+    });
+  } catch (error) {
+    console.warn('Failed to parse FIREBASE_SERVICE_ACCOUNT_KEY:', error.message);
+    if (!admin.apps.length) {
+      admin.initializeApp();
+    }
+  }
+} else if (!admin.apps.length) {
+  admin.initializeApp();
+}
 
 const GMAIL_PASSWORD_SECRET = 'gmailPassword';
 
