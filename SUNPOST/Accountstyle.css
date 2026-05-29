@@ -99,3 +99,29 @@
   .art-viewer-layout{grid-template-columns:1fr}
   .art-viewer-image-wrap{min-height:320px}
 }
+
+@media (max-width:720px) {
+  .account-hero{gap:12px}
+  .account-banner{min-height:220px;padding:14px}
+  .banner-toolbar{right:14px;bottom:14px;gap:10px}
+  .banner-profile{flex-direction:column;gap:14px;margin:-70px auto 0;width:min(100%,92vw);padding:0 12px}
+  .banner-stat{min-width:auto;width:100%;padding:0 12px}
+  .profile-circle{width:140px;height:140px;border-width:5px}
+  .account-meta{text-align:center}
+  .social-links{justify-content:center;flex-wrap:wrap}
+  .account-bio{max-width:100%;font-size:0.95rem}
+  .upload-btn{width:auto;padding:10px 14px;font-size:0.95rem}
+  .account-tabs{gap:10px}
+  .account-tab{padding:14px 12px;font-size:0.95rem}
+  .portfolio-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+  .art-card img{height:180px}
+  .settings-modal, .upload-modal{width:min(96vw,100vw);max-height:calc(100vh - 48px);padding:18px}
+  .upload-modal{width:min(96vw,100vw)}
+  .art-viewer{width:min(96vw,100vw);padding:18px;max-height:calc(100vh - 24px)}
+  .art-viewer-layout{grid-template-columns:1fr;gap:16px}
+  .art-viewer-image-wrap{min-height:260px}
+  .comment-box textarea{min-height:90px}
+  .comment-list{max-height:220px}
+  .modal-overlay{padding:10px}
+  .account-page{gap:18px}
+}

@@ -27,7 +27,7 @@ variable "api_url" {
 }
 
 variable "deployment_source" {
-  description = "Path to deployment source (local path)"
+  description = "Root directory of the deployment within the GitHub repo"
   type        = string
-  default     = "./SUNPOST"
+  default     = "SUNPOST"
 }

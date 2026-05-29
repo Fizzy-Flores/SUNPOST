@@ -191,6 +191,12 @@
 
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="site-config.js?v=3"></script>
+    <script src="firebase-config.js?v=3"></script>
+    <script src="auth.js?v=3"></script>
     <script>
       const tabs = document.querySelectorAll('.account-tab');
       const panels = document.querySelectorAll('.account-panel');
@@ -515,6 +521,41 @@
         updateReactionButtons();
       }
 
+      async function getFirestoreDb() {
+        if (typeof firebase === 'undefined' || !firebase.firestore) {
+          throw new Error('Firebase Firestore is not available. Verify firebase scripts are loaded.');
+        }
+
+        if (!window.SUNPOST_FIREBASE_INITIALIZED) {
+          await ensureFirebaseAuthReady();
+        }
+
+        if (!firebase.apps || !firebase.apps.length) {
+          firebase.initializeApp(firebaseConfig);
+        }
+
+        return firebase.firestore();
+      }
+
+      async function saveUploadToFirestore(artwork, file) {
+        try {
+          const db = await getFirestoreDb();
+          await db.collection('uploads').add({
+            title: artwork.title,
+            type: artwork.type,
+            uploadedAt: firebase.firestore.FieldValue.serverTimestamp ? firebase.firestore.FieldValue.serverTimestamp() : new Date(),
+            fileName: file.name,
+            fileType: file.type,
+            imageData: artwork.image,
+            ownerUid: firebase.auth()?.currentUser?.uid || null,
+          });
+          return true;
+        } catch (error) {
+          console.warn('Failed to save upload to Firestore:', error);
+          return false;
+        }
+      }
+
       async function uploadArtwork(file) {
         if (!file) {
           uploadStatus.textContent = `Choose a file from your folder to post your ${currentUploadType === 'commission' ? 'commission service' : 'personal art piece'}.`;
@@ -535,7 +576,12 @@
         persistArtworkState();
         renderPortfolio();
         renderCommissionPosts();
-        uploadStatus.textContent = `Uploaded ${artwork.title} as a ${artwork.type === 'commission' ? 'commission service' : 'personal art piece'}.`;
+
+        const saved = await saveUploadToFirestore(artwork, file);
+        uploadStatus.textContent = saved
+          ? `Uploaded ${artwork.title} as a ${artwork.type === 'commission' ? 'commission service' : 'personal art piece'} and stored it in Firestore.`
+          : `Uploaded ${artwork.title} locally, but Firestore save failed. Check Firebase configuration.`;
+
         openViewer(artwork.id);
       }
 
