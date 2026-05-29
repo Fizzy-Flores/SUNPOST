@@ -59,6 +59,8 @@ You'll need:
 5. Set environment variables
 6. Deploy
 
+**Important:** the repository contains a top-level `render.yaml` with the Render service definition for the backend. It is aligned with `WEBSITE/Sunpost/backend/render.yaml` and includes the Python 3.12 runtime, `PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python`, and Render file secret support for `GOOGLE_APPLICATION_CREDENTIALS`.
+
 See `WEBSITE/Sunpost/backend/RENDER_DEPLOYMENT.md` for detailed steps.
 
 ## Quick Start
@@ -114,6 +116,8 @@ vercel_team_id   = "your_team_id"
 github_repo      = "yourusername/sunpost"
 api_url          = "https://sunpost-backend.onrender.com"
 ```
+
+This Terraform configuration now sets `SUNPOST_BACKEND_URL` on the Vercel project, so the deployed frontend can be wired to your Render backend.
 
 **Get values:**
 - `vercel_api_token`: https://vercel.com/account/tokens

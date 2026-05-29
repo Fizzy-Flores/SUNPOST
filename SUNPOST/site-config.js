@@ -1,18 +1,24 @@
 // Use the configured backend API base if available.
 // This lets the frontend talk to a deployed auth backend instead of defaulting to the current origin.
+const defaultRenderBackend = "https://sunpost-backend.onrender.com";
+const isVercelHost = window.location.hostname.endsWith(".vercel.app");
+const isLocalHost =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1";
+
 window.SUNPOST_API_BASE =
   window.SUNPOST_API_BASE ||
   window.SUNPOST_API_BASE_URL ||
   window.SUNPOST_BACKEND_URL ||
-  window.location.origin;
+  (isVercelHost ? defaultRenderBackend : window.location.origin);
 
-// If no custom backend is provided, prefer Firebase Functions URL when available.
-// This makes production use the Functions endpoint if deployed via Firebase CLI.
+// If no custom backend is provided and we are not on localhost, fall back to the default Firebase functions host.
 if (!window.SUNPOST_API_BASE || window.SUNPOST_API_BASE === window.location.origin) {
-  // Default functions host (replaceable by setting window.SUNPOST_API_BASE at runtime)
-  const defaultFunctionsHost = `https://${window.location.hostname.replace('sunpost-frontend.vercel.app','sunpost').replace(/^\./,'')}.web.app`;
-  // Only set if an env override isn't present.
-  if (!window.SUNPOST_API_BASE_URL && !window.SUNPOST_BACKEND_URL) {
+  const defaultFunctionsHost = `https://${window.location.hostname
+    .replace("sunpost-frontend.vercel.app", "sunpost")
+    .replace(/^\./, "")}.web.app`;
+
+  if (!window.SUNPOST_API_BASE_URL && !window.SUNPOST_BACKEND_URL && !isLocalHost) {
     window.SUNPOST_API_BASE = defaultFunctionsHost;
   }
 }
