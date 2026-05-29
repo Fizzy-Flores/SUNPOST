@@ -778,8 +778,33 @@ async function handleSignup(event) {
     password,
     username: username || fullName || 'SunPost user',
   })
-    .then((data) => {
-      showMessage(messageEl, 'Account created successfully! Redirecting to login...', false);
+    .then(async (data) => {
+      // Attempt to sign the user in client-side and request OTP automatically
+      showMessage(messageEl, 'Account created. Signing in and requesting verification code...', false);
+      if (hasFirebaseAuth()) {
+        try {
+          const userCred = await firebase.auth().signInWithEmailAndPassword(email, password);
+          const idToken = await userCred.user.getIdToken();
+          await postAuth('/public/request-otp', { idToken });
+          // Mark pending OTP for ~5 minutes so the verify page behaves correctly
+          try { setOtpPending(Math.floor(Date.now() / 1000) + 300); } catch (e) {}
+          showMessage(messageEl, 'OTP sent to your email. Redirecting to verification...', false);
+          setTimeout(() => {
+            window.location.href = 'verify-otp.html';
+          }, 1200);
+          return;
+        } catch (err) {
+          console.warn('Auto sign-in or OTP request failed:', err);
+          showMessage(messageEl, 'Account created. Please sign in to request verification code.', true);
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 1400);
+          return;
+        }
+      }
+
+      // Fallback: no Firebase available client-side — just redirect to login
+      showMessage(messageEl, 'Account created successfully! Please sign in to continue.', false);
       setTimeout(() => {
         window.location.href = 'login.html';
       }, 1400);
