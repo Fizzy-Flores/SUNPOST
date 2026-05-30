@@ -34,3 +34,9 @@ resource "vercel_project" "sunpost_frontend" {
     }
   ]
 }
+
+resource "vercel_deployment" "initial_deploy" {
+  project_id = "prj_dC8v29KFD3ou3BLpLfdWePu8eLaH"
+  production = true
+}
+
