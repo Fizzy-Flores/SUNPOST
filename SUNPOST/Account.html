@@ -297,7 +297,7 @@
         try {
           const parsed = JSON.parse(savedState);
           return {
-            artworks: Array.isArray(parsed.artworks) && parsed.artworks.length ? parsed.artworks : [...seedArtworks],
+            artworks: [...seedArtworks],
             reactions: { ...seedReactionState, ...(parsed.reactions || {}) },
             comments: { ...seedCommentState, ...(parsed.comments || {}) }
           };
@@ -312,7 +312,6 @@
 
       function persistArtworkState() {
         localStorage.setItem(storageKey, JSON.stringify({
-          artworks: state.artworks,
           reactions: state.reactions,
           comments: state.comments
         }));
@@ -337,22 +336,13 @@
         localStorage.setItem(voteStorageKey, JSON.stringify(voteState));
       }
 
-      function fileToDataUrl(file) {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = () => reject(reader.error);
-          reader.readAsDataURL(file);
-        });
-      }
-
       function createArtworkCard(artwork) {
         const card = document.createElement('article');
         card.className = 'art-card';
         card.dataset.artId = artwork.id;
         card.dataset.title = artwork.title;
         card.dataset.type = artwork.type;
-        card.innerHTML = `<img src="${artwork.image}" alt="${artwork.title}" /><p>${artwork.title}</p>`;
+        card.innerHTML = `<img src="${artwork.image}" alt="${artwork.title}" loading="lazy" /><p>${artwork.title}</p>`;
         card.addEventListener('click', () => openViewer(artwork.id));
         return card;
       }
@@ -546,7 +536,6 @@
             uploadedAt: firebase.firestore.FieldValue.serverTimestamp ? firebase.firestore.FieldValue.serverTimestamp() : new Date(),
             fileName: file.name,
             fileType: file.type,
-            imageData: artwork.image,
             ownerUid: firebase.auth()?.currentUser?.uid || null,
           });
           return true;
@@ -562,11 +551,10 @@
           return;
         }
 
-        const imageData = await fileToDataUrl(file);
         const artwork = {
           id: `uploaded-${Date.now()}`,
           title: file.name.replace(/\.[^/.]+$/, ''),
-          image: imageData,
+          image: URL.createObjectURL(file),
           type: currentUploadType
         };
 

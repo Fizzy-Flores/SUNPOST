@@ -9,16 +9,17 @@ import json
 import time
 import secrets
 import hmac
+import tempfile
 import firebase_admin
 from firebase_admin import credentials, auth, firestore, db
 from dotenv import load_dotenv
 from datetime import datetime
 import urllib.request
 import urllib.error
+import base64
 
 # Email sending (Gmail SMTP / OAuth2)
 import smtplib
-import base64
 from email.mime.text import MIMEText
 
 try:
@@ -30,9 +31,21 @@ except ImportError:
 
 load_dotenv()
 
-FIREBASE_CRED_PATH = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+FIREBASE_CRED_PATH = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "").strip()
+FIREBASE_SERVICE_ACCOUNT_B64 = os.getenv("FIREBASE_SERVICE_ACCOUNT_B64", "").strip()
+
+if FIREBASE_SERVICE_ACCOUNT_B64 and (not FIREBASE_CRED_PATH or not os.path.exists(FIREBASE_CRED_PATH)):
+    try:
+        decoded = base64.b64decode(FIREBASE_SERVICE_ACCOUNT_B64)
+        temp_sa = tempfile.NamedTemporaryFile(mode="wb", delete=False, suffix=".json")
+        temp_sa.write(decoded)
+        temp_sa.close()
+        FIREBASE_CRED_PATH = temp_sa.name
+        print(f"Loaded Firebase service account from FIREBASE_SERVICE_ACCOUNT_B64 into: {FIREBASE_CRED_PATH}")
+    except Exception as e:
+        print(f"Failed to decode FIREBASE_SERVICE_ACCOUNT_B64: {e}")
+
 if not FIREBASE_CRED_PATH:
-    # Default to service-account.json in CREDENTIALS if not set
     FIREBASE_CRED_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../CREDENTIALS/service-account.json'))
 
 firebase_enabled = False

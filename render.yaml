@@ -13,7 +13,7 @@ services:
       - key: PORT
         value: 8000
       - key: GOOGLE_APPLICATION_CREDENTIALS
-        scope: build
+        scope: runtime
         fromFile: true
       - key: FIREBASE_DATABASE_URL
         scope: runtime

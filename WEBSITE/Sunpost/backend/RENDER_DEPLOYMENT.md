@@ -74,6 +74,8 @@ Render has two methods to handle the service account JSON:
            FIREBASE_CRED_PATH = f.name
    ```
 
+> Important: If you use `GOOGLE_APPLICATION_CREDENTIALS` with `fromFile: true`, make sure it is configured as a runtime secret in Render. If it is only scoped to `build`, the backend will start without credential access and Firebase auth will fail.
+
 **Option B: Use Render Secrets (Enterprise)**
 Available on paid plans.
 
