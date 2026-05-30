@@ -2,31 +2,34 @@ terraform {
   required_providers {
     vercel = {
       source  = "vercel/vercel"
-      version = "~> 0.16"
+      version = ">= 0.16"
     }
   }
 }
 
 provider "vercel" {
-  api_token = var.vercel_api_token
+  api_token = "vcp_5ZUu7MWTEFvUx4RsuaYYzc7kycer4AfvH49QZKfIeroySJKx4D49OcDW"
+  team = "team_D4VGmYgaoEIZuBgTSCEbKrBl"
 }
 
 # Deploy frontend to Vercel
 resource "vercel_project" "sunpost_frontend" {
-  name = var.project_name
+  name = "sunpost-frontend"
+  framework = "python"
 
   git_repository = {
     type = "github"
-    repo = var.github_repo
+    repo = "Fizzy-Flores/SUNPOST"
   }
 
-  root_directory = var.deployment_source
+  root_directory = "SUNPOST"
 
   environment = [
     {
       key    = "SUNPOST_BACKEND_URL"
-      value  = var.api_url
+      value  = "sunpost-backend.onrender.com"
       target = ["production", "preview", "development"]
+      sensitive = false
     }
   ]
 }

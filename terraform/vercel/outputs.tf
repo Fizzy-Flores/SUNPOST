@@ -1,9 +1,9 @@
 output "vercel_project_id" {
   description = "Vercel project ID"
-  value       = vercel_project.sunpost_frontend.id
+  value       = "prj_dC8v29KFD3ou3BLpLfdWePu8eLaH"
 }
 
 output "vercel_project_url" {
   description = "Vercel project production URL"
-  value       = "https://${vercel_project.sunpost_frontend.name}.vercel.app"
+  value       = "https://sunpost-frontend-taupe.vercel.app/"
 }
