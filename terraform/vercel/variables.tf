@@ -1,5 +1,5 @@
 variable "vercel_api_token" {
-  description = "vcp_5ZUu7MWTEFvUx4RsuaYYzc7kycer4AfvH49QZKfIeroySJKx4D49OcDW"
+  description = "vcp_82qZQuOFVEJSxAgCb6kAEgXwfIXVBiv7u4YxZ9f3ujtqVNsvRp1UgFuN"
   type        = string
   sensitive   = true
 }
