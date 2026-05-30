@@ -8,6 +8,7 @@ terraform {
 }
 
 provider "vercel" {
+  api_token = "vcp_7b8Tq1hjHjui8fS5I5odY9AKzpOQzENmWRAsPQu45Msx7HLAhd3C5hvO"
   team = "team_D4VGmYgaoEIZuBgTSCEbKrBl"
 }
 
