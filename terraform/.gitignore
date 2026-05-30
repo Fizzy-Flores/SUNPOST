@@ -5,8 +5,7 @@
 .terraform.lock.hcl
 terraform.tfvars
 !terraform.tfvars.example
-main.tf
-variables.tf
+
 
 # Environment
 .env
@@ -17,3 +16,7 @@ variables.tf
 .idea/
 *.swp
 *.swo
+
+render.yaml
+main.tf
+variables.tf

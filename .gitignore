@@ -18,6 +18,4 @@ firebase.json
 firestore.indexes.json
 firestore.rules
 
-Procfile
-terraform.tfstate
-render.yaml
+
