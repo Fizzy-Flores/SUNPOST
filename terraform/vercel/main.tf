@@ -15,12 +15,12 @@ provider "vercel" {
 
 # Deploy frontend to Vercel
 resource "vercel_project" "sunpost_frontend" {
-  name = "sunpost-frontend"
+  name = var.project_name 
   framework = "python"
 
   git_repository = {
     type = "github"
-    repo = "Fizzy-Flores/SUNPOST"
+    repo = "https://github.com/Fizzy-Flores/SUNPOST"
   }
 
   root_directory = "SUNPOST"
@@ -38,5 +38,6 @@ resource "vercel_project" "sunpost_frontend" {
 resource "vercel_deployment" "initial_deploy" {
   project_id = "prj_dC8v29KFD3ou3BLpLfdWePu8eLaH"
   production = true
+  ref = "main"
 }
 
